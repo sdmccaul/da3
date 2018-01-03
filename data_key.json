@@ -1,5 +1,16 @@
 {
-    "attribute_sample": {
+    "1_tag_count": {
+        "bounds": 1, 
+        "member": 27147, 
+        "meta": 1, 
+        "nd": 843899, 
+        "node": 720267, 
+        "note": 1, 
+        "relation": 337, 
+        "tag": 354591, 
+        "way": 101306
+    }, 
+    "2_attribute_sample": {
         "bounds": {
             "maxlat": "41.9574000", 
             "maxlon": "-71.2326000", 
@@ -48,7 +59,7 @@
             "version": "1"
         }
     }, 
-    "child_count": {
+    "3_child_count": {
         "node": {
             "tag": 79111
         }, 
@@ -61,7 +72,7 @@
             "tag": 273430
         }
     }, 
-    "tag_attributes": {
+    "4_tag_attributes": {
         "FID": "2", 
         "FIXME": "Underlying infrastructure \"Northeast Corridor\" uses high-speed tracks, not slower \"regional\" tracks", 
         "FIXME2": "Track split at Quantico", 

@@ -6,7 +6,7 @@ import pprint
 import json
 
 
-street_type_re = re.compile(r'\b\S+\.?$', re.IGNORECASE)
+# street_type_re = re.compile(r'\b\S+\.?$', re.IGNORECASE)
 
 
 def model_created_attrs(elem, mongo_obj):
@@ -24,7 +24,7 @@ def model_tag(tagElem, mongo_obj):
     k = tagElem.attrib['k']
     v = tagElem.attrib['v']
     if ':' in k:
-        parent, child = k.split(':')
+        parent, child = k.split(':',1)
         if parent in reserved:
             return mongo_obj
         elif parent not in mongo_obj or isinstance(mongo_obj[parent], str):
@@ -44,7 +44,7 @@ def model_elem(elem, childRef=None):
     mongo_obj = model_created_attrs(elem, mongo_obj)
     for child in list(elem):
         if child.tag == childRef:
-            mongo_obj[childRef].append(child.attr['ref'])
+            mongo_obj[childRef].append(child.attrib['ref'])
         elif child.tag == 'tag':
             mongo_obj = model_tag(child, mongo_obj)
         else:
@@ -52,30 +52,19 @@ def model_elem(elem, childRef=None):
     return mongo_obj
 
 
-def is_street_name(elem):
-    return (elem.attrib['k'] == "addr:street")
+# def is_street_name(elem):
+#     return (elem.attrib['k'] == "addr:street")
 
-def audit_street_type(street_types, street_name):
-    m = street_type_re.search(street_name)
-    if m:
-        street_type = m.group()
-        street_types[street_type] += 1
+# def audit_street_type(street_types, street_name):
+#     m = street_type_re.search(street_name)
+#     if m:
+#         street_type = m.group()
+#         street_types[street_type] += 1
 
-def audit_user(elem):
-    user = elem.attrib['user']
-    users[user] += 1
-
-def audit_source(elem):
-    key = elem.attrib['k']
-    if key == 'source':
-        sources[elem.attrib['v']] += 1
-    elif key == 'attribution':
-        attributions[elem.attrib['v']] += 1
-
-def audit_timestamp(elem):
-    ts = elem.attrib['timestamp']
-    dt = datetime.datetime.strptime(ts, '%Y-%m-%dT%H:%M:%SZ')
-    timestamps[dt.strftime('%Y-%m')] += 1
+# def audit_timestamp(elem):
+#     ts = elem.attrib['timestamp']
+#     dt = datetime.datetime.strptime(ts, '%Y-%m-%dT%H:%M:%SZ')
+#     timestamps[dt.strftime('%Y-%m')] += 1
 
 
 def get_element(osm_file, skip=('osm')):
@@ -101,7 +90,7 @@ def traverse_elements(osmFile):
     child_count = defaultdict(Counter)
     attribute_sample = defaultdict(dict)
     tag_k_v = dict()
-    with open('data/providence_et_al.json','a') as f:
+    with open('data/providence_et_al.json','w') as f:
         f.write('[\n')
         for elem in get_element(osmFile):
             if elem.text is True:
