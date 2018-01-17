@@ -8,6 +8,75 @@ import json
 
 # street_type_re = re.compile(r'\b\S+\.?$', re.IGNORECASE)
 
+def map_zone():
+    pass
+
+def validate_lat_lon(lat, lon):
+    maxlat = 41.9574000
+    maxlon = -71.2326000
+    minlat = 41.6406000
+    minlon = -71.5237000
+    flat = float(lat)
+    flon = float(lon)
+    if ( minlat <= flat <= maxlat ) and ( minlon <= flon <= maxlon ):
+        return [ flat, flon ]
+    else:
+        return None
+
+def validate_street(raw):
+    if ',' in raw:
+        raw = raw[:raw.index(',')]
+    cameled = [ w.capitalize() for w in raw.strip('.').split(' ') ]
+    if cameled[0].isdigit():
+        cameled = cameled[1:]
+    street_map = {
+        'Ave' : 'Avenue',
+        'St'  : 'Street',
+        'Sq'  : 'Square',
+        'Dr'  : 'Drive',
+        'Blvd' : 'Boulevard',
+        'Rd' : 'Road',
+        'Ct' : 'Court',
+        'Wy' : 'Way',
+        'Hwy' : 'Highway',
+        'Bowenstreet' : 'Bowen Street'
+    }
+    if cameled[-1] in street_map:
+        cameled[-1] = street_map[cameled[-1]]
+    cleaned = ' '.join(cameled)
+    return cleaned
+
+def model_addr_val(mongo_obj, k):
+    v = mongo_obj['addr'][k]
+    if k == 'postcode':
+        valid = validate_postcode(v)
+    # elif k == 'housenumber':
+    #     valid = validate_housenumber(v)
+    elif k == 'street':
+        valid = validate_street(v)
+    else:
+        return mongo_obj
+    mongo_obj['addr'][k] = valid
+    return mongo_obj
+
+def validate_postcode(raw):
+    zipcode = re.split('[- ]', raw)[0]
+    if len(zipcode) > 5:
+        if zipcode == '029212':
+            zipcode = '02912'
+        else:
+            zipcode = None
+    return zipcode
+
+def validate_housenumber(raw):
+    pass
+
+def validate_timestamp(raw):
+    try:
+        parsed = datetime.datetime.strptime(raw, '%Y-%m-%dT%H:%M:%SZ')
+        return raw
+    except:
+        return None
 
 def model_created_attrs(elem, mongo_obj):
     mongo_obj['created'] = { 'version' : None,
@@ -17,6 +86,8 @@ def model_created_attrs(elem, mongo_obj):
                     'uid' : None }
     for crt_attr in mongo_obj['created']:
         mongo_obj['created'][crt_attr] = elem.attrib[crt_attr]
+    mongo_obj['created']['timestamp'] = validate_timestamp(
+        mongo_obj['created']['timestamp'])
     return mongo_obj
 
 def model_tag(tagElem, mongo_obj):
@@ -31,6 +102,8 @@ def model_tag(tagElem, mongo_obj):
             mongo_obj[parent] = { child: v }
         else:
             mongo_obj[parent][child] = v
+        if parent == 'addr':
+            mongo_obj = model_addr_val(mongo_obj, child)
     else:
         mongo_obj[k] = v
     return mongo_obj
@@ -40,7 +113,9 @@ def model_elem(elem, childRef=None):
     if childRef:
         mongo_obj[childRef] = []
     else:
-        mongo_obj['pos'] = [ elem.attrib['lat'], elem.attrib['lon'] ]
+        mongo_obj['pos'] = validate_lat_lon(
+            elem.attrib['lat'], elem.attrib['lon'] )
+
     mongo_obj = model_created_attrs(elem, mongo_obj)
     for child in list(elem):
         if child.tag == childRef:
@@ -61,7 +136,7 @@ def model_elem(elem, childRef=None):
 #         street_type = m.group()
 #         street_types[street_type] += 1
 
-# def audit_timestamp(elem):
+# def validate_timestamp(elem):
 #     ts = elem.attrib['timestamp']
 #     dt = datetime.datetime.strptime(ts, '%Y-%m-%dT%H:%M:%SZ')
 #     timestamps[dt.strftime('%Y-%m')] += 1
@@ -113,6 +188,7 @@ def traverse_elements(osmFile):
             if mongo_obj:
                 f.write(json.dumps(mongo_obj, sort_keys=True, indent=4))
                 f.write(',\n')
+        f.write('{}')
         f.write(']')
 
     # Asserts every element has every attribute present

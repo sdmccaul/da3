@@ -1,0 +1,11 @@
+DONE#"addr" doesn't look interesting
+DONE#clean up zipcodes, "building"
+better MongoDB queries: generating stats
+
+Future work
+--> map out "zones": rollup  into commerical, industrial, residential, civic
+massgis, source, gnis: an embedded data model; "feature_id"
+--> map out over time
+--> remove nodes with no data other than machine generated
+correlation of attributes
+further cleaning of street names
