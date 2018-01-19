@@ -7,5 +7,6 @@ Future work
 massgis, source, gnis: an embedded data model; "feature_id"
 --> map out over time
 --> remove nodes with no data other than machine generated
+--> invalid "pos"?
 correlation of attributes
 further cleaning of street names

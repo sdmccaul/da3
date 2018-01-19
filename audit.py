@@ -9,7 +9,109 @@ import json
 # street_type_re = re.compile(r'\b\S+\.?$', re.IGNORECASE)
 
 def map_zone():
-    pass
+    mapped_zones = {
+        "residential" : "residential",
+        "commercial" : "commercial",
+        "industrial" : "industrial",
+        "civic" : "civic",
+        "cinema" : "commercial",
+        "parking" : "commercial",
+        "school" : "civic",
+        "university" : "civic",
+        "place_of_worship" : "civic",
+        "townhall" : "civic",
+        "fire_station" : "civic",
+        "social_facility" : "civic",
+        "restaurant" : "commercial",
+        "cafe" : "commercial",
+        "pharmacy" : "commercial",
+        "public_building" : "civic",
+        "fast_food" : "commercial",
+        "bank" : "commercial",
+        "fuel" : "commercial",
+        "kindergarten" : "civic",
+        "pub" : "commercial",
+        "theatre" : "commercial",
+        "courthouse" : "civic",
+        "library" : "civic",
+        "police" : "civic",
+        "car_wash" : "commercial",
+        "post_office" : "civic",
+        "swimming_pool" : "civic",
+        "veterinary" : "commercial",
+        "doctors" : "commercial",
+        "car_rental" : "commercial",
+        "dining_hall" : "civic",
+        "prison" : "civic",
+        "hospital" : "civic",
+        "grave_yard" : "civic",
+        "community_centre" : "civic",
+        "nightclub" : "commercial",
+        "college" : "civic",
+        "ferry_terminal" : "civic",
+        "clinic" : "commercial",
+        "bicycle_parking" : "civic",
+        "bar" : "commercial",
+        "fountain" : "civic",
+        "car_sharing" : "commercial",
+        "parking_space" : "commercial",
+        "childcare" : "civic",
+        "toilets" : "civic",
+        "dentist" : "commercial",
+        "waste_transfer_station" : "civic",
+        "retail" : "commercial",
+        "warehouse" : "industrial",
+        "office" : "commercial",
+        "house" : "residential",
+        "apartments" : "residential",
+        "hospital" : "commercial",
+        "dormitory" : "civic",
+        "hotel" : "commercial",
+        "construction" : "industrial",
+        "garage" : "industrial",
+        "chapel" : "civic",
+        "shed" : "industrial",
+        "kindergarten" : "civic",
+        "refectory" : "civic",
+        "stable" : "industrial",
+        "recreation_ground" : "civic",
+        "golf_course" : "civic",
+        "nature_reserve" : "civic",
+        "park" : "civic",
+        "playground" : "civic",
+        "pitch" : "civic",
+        "ice_rink" : "civic",
+        "stadium" : "civic",
+        "track" : "civic",
+        "sports_centre" : "civic",
+        "miniature_golf" : "commercial",
+        "bowling" : "civic",
+        "marina" : "civic",
+        "fitness_centre" : "civic",
+        "firepit" : "civic",
+        "swimming_pool" : "civic",
+        "garden" : "civic",
+        "dog_park" : "civic",
+        "court" : "civic",
+        "conservation" : "civic",
+        "farm" : "industrial",
+        "reservoir_watershed" : "civic",
+        "cemetery" : "civic",
+        "recreation_ground" : "civic",
+        "forest" : "industrial",
+        "village_green" : "civic",
+        "grass" : "industrial",
+        "farmland" : "industrial",
+        "quarry" : "industrial",
+        "meadow" : "industrial",
+        "reservoir" : "civic",
+        "military" : "industrial",
+        "farmyard" : "industrial",
+        "landfill" : "industrial",
+        "brownfield" : "industrial",
+        "churchyard" : "civic",
+        "allotments" : "industrial",
+    }
 
 def validate_lat_lon(lat, lon):
     maxlat = 41.9574000
@@ -126,22 +228,6 @@ def model_elem(elem, childRef=None):
             print 'unexpected child: ', child.tag
     return mongo_obj
 
-
-# def is_street_name(elem):
-#     return (elem.attrib['k'] == "addr:street")
-
-# def audit_street_type(street_types, street_name):
-#     m = street_type_re.search(street_name)
-#     if m:
-#         street_type = m.group()
-#         street_types[street_type] += 1
-
-# def validate_timestamp(elem):
-#     ts = elem.attrib['timestamp']
-#     dt = datetime.datetime.strptime(ts, '%Y-%m-%dT%H:%M:%SZ')
-#     timestamps[dt.strftime('%Y-%m')] += 1
-
-
 def get_element(osm_file, skip=('osm')):
     """Yield element if it is the right type of tag
 
@@ -165,6 +251,7 @@ def traverse_elements(osmFile):
     child_count = defaultdict(Counter)
     attribute_sample = defaultdict(dict)
     tag_k_v = dict()
+    data_obj_count = defaultdict(Counter)
     with open('data/providence_et_al.json','w') as f:
         f.write('[\n')
         for elem in get_element(osmFile):
@@ -186,6 +273,7 @@ def traverse_elements(osmFile):
             elif elem.tag == 'relation':
                 mongo_obj = model_elem(elem, 'member')
             if mongo_obj:
+                data_obj_count[mongo_obj['datatype']].update(mongo_obj.keys())
                 f.write(json.dumps(mongo_obj, sort_keys=True, indent=4))
                 f.write(',\n')
         f.write('{}')
@@ -214,7 +302,9 @@ def traverse_elements(osmFile):
     data_key['2_attribute_sample'] = dict(attribute_sample)
     data_key['3_child_count'] = { parent: dict(child_count[parent])
                                     for parent in child_count }
-    data_key['4_tag_attributes'] = tag_k_v
+    data_key['4_json_data_stats'] = { parent: dict(data_obj_count[parent])
+                                    for parent in data_obj_count }
+    data_key['5_tag_attributes'] = tag_k_v 
 
     with open('data_key.json','w') as f:
         json.dump(data_key, f, sort_keys=True, indent=4)
