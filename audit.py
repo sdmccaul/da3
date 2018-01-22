@@ -8,110 +8,40 @@ import json
 
 # street_type_re = re.compile(r'\b\S+\.?$', re.IGNORECASE)
 
-def map_zone():
+def model_zones(mongo_obj, k, v):
     mapped_zones = {
-        "residential" : "residential",
-        "commercial" : "commercial",
-        "industrial" : "industrial",
-        "civic" : "civic",
-        "cinema" : "commercial",
-        "parking" : "commercial",
-        "school" : "civic",
-        "university" : "civic",
-        "place_of_worship" : "civic",
-        "townhall" : "civic",
-        "fire_station" : "civic",
-        "social_facility" : "civic",
-        "restaurant" : "commercial",
-        "cafe" : "commercial",
-        "pharmacy" : "commercial",
-        "public_building" : "civic",
-        "fast_food" : "commercial",
-        "bank" : "commercial",
-        "fuel" : "commercial",
-        "kindergarten" : "civic",
-        "pub" : "commercial",
-        "theatre" : "commercial",
-        "courthouse" : "civic",
-        "library" : "civic",
-        "police" : "civic",
-        "car_wash" : "commercial",
-        "post_office" : "civic",
-        "swimming_pool" : "civic",
-        "veterinary" : "commercial",
-        "doctors" : "commercial",
-        "car_rental" : "commercial",
-        "dining_hall" : "civic",
-        "prison" : "civic",
-        "hospital" : "civic",
-        "grave_yard" : "civic",
-        "community_centre" : "civic",
-        "nightclub" : "commercial",
-        "college" : "civic",
-        "ferry_terminal" : "civic",
-        "clinic" : "commercial",
-        "bicycle_parking" : "civic",
-        "bar" : "commercial",
-        "fountain" : "civic",
-        "car_sharing" : "commercial",
-        "parking_space" : "commercial",
-        "childcare" : "civic",
-        "toilets" : "civic",
-        "dentist" : "commercial",
-        "waste_transfer_station" : "civic",
-        "retail" : "commercial",
-        "warehouse" : "industrial",
-        "office" : "commercial",
-        "house" : "residential",
-        "apartments" : "residential",
-        "hospital" : "commercial",
-        "dormitory" : "civic",
-        "hotel" : "commercial",
-        "construction" : "industrial",
-        "garage" : "industrial",
-        "chapel" : "civic",
-        "shed" : "industrial",
-        "kindergarten" : "civic",
-        "refectory" : "civic",
-        "stable" : "industrial",
-        "recreation_ground" : "civic",
-        "golf_course" : "civic",
-        "nature_reserve" : "civic",
-        "park" : "civic",
-        "playground" : "civic",
-        "pitch" : "civic",
-        "ice_rink" : "civic",
-        "stadium" : "civic",
-        "track" : "civic",
-        "sports_centre" : "civic",
-        "miniature_golf" : "commercial",
-        "bowling" : "civic",
-        "marina" : "civic",
-        "fitness_centre" : "civic",
-        "firepit" : "civic",
-        "swimming_pool" : "civic",
-        "garden" : "civic",
-        "dog_park" : "civic",
-        "court" : "civic",
-        "conservation" : "civic",
-        "farm" : "industrial",
-        "reservoir_watershed" : "civic",
-        "cemetery" : "civic",
-        "recreation_ground" : "civic",
-        "forest" : "industrial",
-        "village_green" : "civic",
-        "grass" : "industrial",
-        "farmland" : "industrial",
-        "quarry" : "industrial",
-        "meadow" : "industrial",
-        "reservoir" : "civic",
-        "military" : "industrial",
-        "farmyard" : "industrial",
-        "landfill" : "industrial",
-        "brownfield" : "industrial",
-        "churchyard" : "civic",
-        "allotments" : "industrial",
+    #From 'buildings' field
+        'building' : {
+            "college" : "civic",
+            "public" : "civic",
+            "house" : "residential",
+            "office" : "commercial",
+            "school" : "civic",
+            "commercial" : "commercial",
+            "retail" : "commercial",
+            "civic" : "civic",
+            "warehouse" : "industrial",
+            "industrial" : "industrial",
+            "residential" : "residential",
+            "apartments" : "residential",
+            "church" : "civic",
+            "dormitory" : "civic",
+            "university" : "civic",
+            "hospital" : "commercial",
+            "roof" : "industrial",
+            "construction" : "industrial",
+            "hotel" : "commercial",
+            "garage" : "industrial",
+            "chapel" : "civic",
+            "shed" : "industrial",
+            "kindergarten" : "civic",
+            "refectory" : "civic",
+            "stable" : "industrial"
+        }
     }
+    if k in mapped_zones and v in mapped_zones[k]:
+        mongo_obj['zone'] = mapped_zones[k][v]
+    return mongo_obj
 
 def validate_lat_lon(lat, lon):
     maxlat = 41.9574000
@@ -196,6 +126,7 @@ def model_tag(tagElem, mongo_obj):
     reserved = ['pos','created', 'datatype']
     k = tagElem.attrib['k']
     v = tagElem.attrib['v']
+    zones = [ 'building' ]
     if ':' in k:
         parent, child = k.split(':',1)
         if parent in reserved:
@@ -208,6 +139,8 @@ def model_tag(tagElem, mongo_obj):
             mongo_obj = model_addr_val(mongo_obj, child)
     else:
         mongo_obj[k] = v
+    if k in zones:
+            mongo_obj = model_zones(mongo_obj, k, v)
     return mongo_obj
 
 def model_elem(elem, childRef=None):

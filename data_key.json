@@ -224,7 +224,8 @@
             "wheelchair": 23, 
             "wifi": 4, 
             "wikidata": 114, 
-            "wikipedia": 15
+            "wikipedia": 15, 
+            "zone": 14
         }, 
         "relation": {
             "FIXME": 4, 
@@ -318,7 +319,8 @@
             "website": 10, 
             "wetland": 3, 
             "wikidata": 49, 
-            "wikipedia": 44
+            "wikipedia": 44, 
+            "zone": 15
         }, 
         "way": {
             "FID": 1, 
@@ -549,7 +551,8 @@
             "width": 1721, 
             "wikidata": 80, 
             "wikipedia": 55, 
-            "wood": 1
+            "wood": 1, 
+            "zone": 27888
         }
     }, 
     "5_tag_attributes": {
