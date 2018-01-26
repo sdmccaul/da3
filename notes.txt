@@ -1,3 +1,5 @@
+https://stackoverflow.com/questions/12823990/how-to-get-mongo-command-results-in-to-a-flat-file
+
 DONE#"addr" doesn't look interesting
 DONE#clean up zipcodes, "building"
 better MongoDB queries: generating stats
@@ -10,3 +12,45 @@ massgis, source, gnis: an embedded data model; "feature_id"
 --> invalid "pos"?
 correlation of attributes
 further cleaning of street names
+
+import pandas as pd
+import json
+with open('data/count_by_date.json','r') as f:
+    jdata = json.load(f)
+rng = pd.date_range('9/1/2007', periods=124, freq='M')
+df = pd.DataFrame({ 'year': [ d['_id']['year'] for d in jdata ], 'month': [ d['_id']['month'] for d in jdata ], 'day' : 1, "count" : [ d['count'] for d in jdata ] })
+df
+pd.to_datetime(df)
+df['date'] = pd.to_datetime(df)
+df['date'] = pd.to_datetime(df['year'],df['month'],df['day'])
+df['date'] = pd.to_datetime([df['year'],df['month'],df['day']])
+data = [ { 'date' : "{0}-{1}-{2}".format(d['_id']['year'], d['_id']['month'], 1), "count" : d['count'] } for d in jdata ] })
+data = [ { 'date' : "{0}-{1}-{2}".format(d['_id']['year'], d['_id']['month'], 1), "count" : d['count'] } for d in jdata ]
+data
+ts
+rng
+df  = pd.DataFrame?
+df  = pd.DataFrame(index=rng)
+df
+ts = pd.DataFrame(data)
+ts
+pd.merge?
+df
+ts
+pd.merge(df, ts, left_index=True, right_on='date')
+ts['datetime'] = pd.to_datetime(ts['date'])
+ts
+ts.drop?
+ts.drop('date',axis=1)
+ts
+df = ts.drop('date',axis=1)
+df
+import seaborn as sns
+df.plot()
+df.set_index('datetime')
+idx df.set_index('datetime')
+idx = df.set_index('datetime')
+idx.plot()
+%pylab inline
+plt = idx.plot()
+history

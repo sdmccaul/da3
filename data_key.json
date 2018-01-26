@@ -225,7 +225,7 @@
             "wifi": 4, 
             "wikidata": 114, 
             "wikipedia": 15, 
-            "zone": 14
+            "zone": 1634
         }, 
         "relation": {
             "FIXME": 4, 
@@ -320,7 +320,7 @@
             "wetland": 3, 
             "wikidata": 49, 
             "wikipedia": 44, 
-            "zone": 15
+            "zone": 40
         }, 
         "way": {
             "FID": 1, 
@@ -552,7 +552,7 @@
             "wikidata": 80, 
             "wikipedia": 55, 
             "wood": 1, 
-            "zone": 27888
+            "zone": 29969
         }
     }, 
     "5_tag_attributes": {

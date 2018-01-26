@@ -27,7 +27,7 @@ def model_zones(mongo_obj, k, v):
             "church" : "civic",
             "dormitory" : "civic",
             "university" : "civic",
-            "hospital" : "commercial",
+            "hospital" : "civic",
             "roof" : "industrial",
             "construction" : "industrial",
             "hotel" : "commercial",
@@ -37,6 +37,99 @@ def model_zones(mongo_obj, k, v):
             "kindergarten" : "civic",
             "refectory" : "civic",
             "stable" : "industrial"
+        },
+        'amenity' : {
+            "police" : "civic",
+            "fire_station" : "civic",
+            "library" : "civic",
+            "school" : "civic",
+            "townhall" : "civic",
+            "grave_yard" : "civic",
+            "hospital" : "civic",
+            "place_of_worship" : "civic",
+            "nursing_home" : "civic",
+            "post_office" : "civic",
+            "community_centre" : "civic",
+            "university" : "civic",
+            "clinic" : "civic",
+            "kindergarten" : "civic",
+            "courthouse" : "civic",
+            "prison" : "civic",
+            "fast_food" : "commercial",
+            "cafe" : "commercial",
+            "bar" : "commercial",
+            "bus_station" : "civic",
+            "restaurant" : "commercial",
+            "theatre" : "commercial",
+            "pharmacy" : "commercial",
+            "bank" : "commercial",
+            "fuel" : "commercial",
+            "cinema" : "commercial",
+            "swimming_pool" : "civic",
+            "car_rental" : "commercial",
+            "car_wash" : "commercial",
+            "fountain" : "civic",
+            "pub" : "commercial",
+            "swings" : "civic",
+            "piercing" : "commercial",
+            "retail" : "commercial",
+            "childcare" : "civic",
+            "marketplace" : "commercial",
+            "social_facility" : "civic",
+            "arts_centre" : "civic",
+            "ferry_terminal" : "civic",
+            "bbq" : "commercial",
+            "college" : "civic",
+            "social_centre" : "civic",
+            "dojo" : "commercial",
+            "dentist" : "commercial",
+            "ice_cream" : "commercial",
+            "public_building" : "civic",
+            "veterinary" : "commercial",
+            "dining_hall" : "civic",
+            "nightclub" : "commercial",
+            "waste_transfer_station" : "industrial"
+        },
+        'leisure': {
+            "park" : "civic",
+            "sports_centre" : "civic",
+            "marina" : "commercial",
+            "playground" : "civic",
+            "dog_park" : "civic",
+            "fitness_centre" : "commercial",
+            "pitch" : "civic",
+            "dance" : "commercial",
+            "recreation_ground" : "civic",
+            "nature_reserve" : "civic",
+            "golf_course" : "commercial",
+            "ice_rink" : "civic",
+            "stadium" : "commercial",
+            "miniature_golf" : "commercial",
+            "bowling" : "commercial",
+            "swimming_pool" : "civic",
+            "garden" : "civic",
+            "court" : "civic"
+        },
+        'landuse': {
+            "reservoir" : "industrial",
+            "cemetery" : "civic",
+            "quarry" : "industrial",
+            "farm" : "industrial",
+            "reservoir_watershed" : "industrial",
+            "recreation_ground" : "civic",
+            "retail" : "commercial",
+            "village_green" : "civic",
+            "residential" : "residential",
+            "industrial" : "industrial",
+            "farmland" : "industrial",
+            "construction" : "industrial",
+            "commercial" : "commercial",
+            "military" : "industrial",
+            "farmyard" : "industrial",
+            "landfill" : "industrial",
+            "brownfield" : "industrial",
+            "churchyard" : "civic",
+            "allotments" : "industrial"
         }
     }
     if k in mapped_zones and v in mapped_zones[k]:
@@ -105,8 +198,7 @@ def validate_housenumber(raw):
 
 def validate_timestamp(raw):
     try:
-        parsed = datetime.datetime.strptime(raw, '%Y-%m-%dT%H:%M:%SZ')
-        return raw
+        return datetime.datetime.strptime(raw, '%Y-%m-%dT%H:%M:%SZ')
     except:
         return None
 
@@ -118,15 +210,20 @@ def model_created_attrs(elem, mongo_obj):
                     'uid' : None }
     for crt_attr in mongo_obj['created']:
         mongo_obj['created'][crt_attr] = elem.attrib[crt_attr]
-    mongo_obj['created']['timestamp'] = validate_timestamp(
-        mongo_obj['created']['timestamp'])
+    valid_date = validate_timestamp( mongo_obj['created']['timestamp'] )
+    if valid_date :
+        mongo_obj['created']['year'] = valid_date.year
+        mongo_obj['created']['month'] = valid_date.month
+        mongo_obj['created']['day'] = valid_date.day
+    else:
+        del mongo_obj['created']['timestamp']
     return mongo_obj
 
 def model_tag(tagElem, mongo_obj):
     reserved = ['pos','created', 'datatype']
     k = tagElem.attrib['k']
     v = tagElem.attrib['v']
-    zones = [ 'building' ]
+    zones = [ 'building', 'amenity', 'leisure', 'landuse' ]
     if ':' in k:
         parent, child = k.split(':',1)
         if parent in reserved:
@@ -140,7 +237,7 @@ def model_tag(tagElem, mongo_obj):
     else:
         mongo_obj[k] = v
     if k in zones:
-            mongo_obj = model_zones(mongo_obj, k, v)
+        mongo_obj = model_zones(mongo_obj, k, v)
     return mongo_obj
 
 def model_elem(elem, childRef=None):
