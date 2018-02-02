@@ -1,4 +1,5 @@
 https://stackoverflow.com/questions/12823990/how-to-get-mongo-command-results-in-to-a-flat-file
+https://stackoverflow.com/questions/29233283/plotting-multiple-lines-with-pandas-dataframe
 
 DONE#"addr" doesn't look interesting
 DONE#clean up zipcodes, "building"
@@ -13,6 +14,8 @@ massgis, source, gnis: an embedded data model; "feature_id"
 correlation of attributes
 further cleaning of street names
 
+
+# Basic count
 import pandas as pd
 import json
 with open('data/count_by_date.json','r') as f:
@@ -54,3 +57,48 @@ idx.plot()
 %pylab inline
 plt = idx.plot()
 history
+## End basic count
+
+## User count
+# https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html
+# https://stackoverflow.com/questions/11976503/how-to-keep-index-when-using-pandas-merge
+# http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.rename.html
+with open('data/filtered_user_date.json','r') as f:
+    jdata = json.load(f)
+data = [ { 'jnr' : "{0}-{1}".format(d['_id']['year'], d['_id']['month']), "user": d['_id']['user'], "count" : d['count'] } for d in jdata ]
+df = pd.DataFrame(data)
+
+rng = pd.date_range('6/1/2007', periods=130, freq='M')
+ts = pd.DataFrame( [ {'jnr' : "{0}-{1}".format(x.year, x.month) } for x in rng ] ,index=rng)
+
+for user, group in df.groupby('user'):
+    user_data = group.drop('user',axis=1)
+    ts = ts.reset_index().merge(user_data, how='left', on='jnr').set_index('index').fillna(0).rename({'count': user}, axis=1)
+
+final = ts.drop('jnr',axis=1)
+maxval = final.max().max()
+final.plot(use_index=True, xlim=(final.index[0],final.index[-1]), ylim=(0,maxval + maxval*.01) )
+plt.show()
+
+
+#https://matplotlib.org/examples/api/date_demo.html
+import matplotlib.dates as mdates
+import datetime
+years = mdates.YearLocator()
+months = mdates.MonthLocator()
+yearsFmt = mdates.DateFormatter('%Y')
+datemin = datetime.date(2007,1,1)
+datemax = datetime.date(2017,12,1)
+ax.set_xlim(datemin, datemax)
+
+fig, ax = plt.subplots()
+ax.xaxis.set_major_locator(years)
+ax.xaxis.set_minor_locator(months)
+ax.xaxis.set_major_formatter(yearsFmt)
+for key, grp in df.groupby(['user']):
+    ax = grp.sort_values(by='datetime').plot(ax=ax, x='datetime', y='count', label=key)
+plt.show()
+
+data = [ { 'date' : "{0}-{1}-{2}".format(d['_id']['year'], d['_id']['month'], 1), "user": d['_id']['user'], "count" : d['count'] } for d in jdata ] 
+
+jnr = [ "{0}-{1}".format(x.year, x.month) for x in rng ] 
