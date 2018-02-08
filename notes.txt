@@ -1,3 +1,17 @@
+WRITE UP
+
+assertions allow us to be naive in parsing element: no error handling
+focus on nested attribute values: dealing with double colons, overwrites
+
+to do: run percentage elements with tags, etc
+
+Surprises: mostly ways with tags; top-level elements note and meta; 
+Attempt to get attribute counts via Mongo leads to sampling JSON data prior to output
+
+Future work: map relations, ways to nodes; geospatial analysis, zones
+
+
+
 https://stackoverflow.com/questions/12823990/how-to-get-mongo-command-results-in-to-a-flat-file
 https://stackoverflow.com/questions/29233283/plotting-multiple-lines-with-pandas-dataframe
 

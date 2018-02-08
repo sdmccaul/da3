@@ -271,31 +271,63 @@ def get_element(osm_file, skip=('osm')):
             yield elem
             root.clear()
 
-def traverse_elements(osmFile):
-    # Audit street names
-    # Lat, Long within bounds
-    # handle problem attribute names, ie, with colons
-    tag_count = Counter()
+def parse_osm_xml(osmFile):
+
+    # A set of counters for data auditing and cross-validation
+    ## Counts number of elements (tags)
+    element_count = Counter()
+    ## Counts elements with text content (should be 0)
     with_text = Counter()
-    attrib_count = defaultdict(Counter)
+    ## For each type of element, count their attributes
+    attr_count = defaultdict(Counter)
+    ## For each type of element, count their children
     child_count = defaultdict(Counter)
-    attribute_sample = defaultdict(dict)
-    tag_k_v = dict()
+    ## For each type of element,
+    ## store a sample of each attribute value
+    attr_sample = defaultdict(dict)
+    ## For each Tag element, store the values
+    ## for "key" and "value" attributes
+    tag_sample = dict()
+    ## Count the document contents for the JSON data
+    ## being written to MongoDB
     data_obj_count = defaultdict(Counter)
+
+    # The main process
     with open('data/providence_et_al.json','w') as f:
+        # Write some helper text to ensure the output
+        # file is valid JSON
         f.write('[\n')
         for elem in get_element(osmFile):
             if elem.text is True:
                 with_text[elem.tag] += 1
-            tag_count[elem.tag] += 1
+            element_count[elem.tag] += 1
             for k in elem.attrib:
-                attrib_count[elem.tag][k] += 1
-                attribute_sample[elem.tag][k] = elem.attrib[k]
+                # Count the occurence of an attribute/element
+                attr_count[elem.tag][k] += 1
+                # Sample the attribute's value
+                attr_sample[elem.tag][k] = elem.attrib[k]
+            #Tally all the children of the element
             for child in list(elem):
                 child_count[elem.tag][child.tag] += 1
+            # Begin building the dict for eventual JSON data
+            # 3 top-level elements -- meta, bounds, note --
+            # are ignored. Child-level elements --
+            # nd, tag, and member -- are handled when
+            # their parent element is processed. Focus is on
+            # the central elements: node, way, relation.
+            skip_elements = [ 'meta', 'bounds', 'note', 'nd' ]
+            ## we're not processing these,
+            ## so just move to the next element
+            if elem.tag in skip_elements:
+                continue
             mongo_obj = None
+            ## We'll still take a sample of the value for
+            ## each key in a tag, but otherwise skip them
             if elem.tag == 'tag':
-                tag_k_v[elem.attrib['k']] = elem.attrib['v']
+                tag_sample[elem.attrib['k']] = elem.attrib['v']
+                continue
+            ## Conditional handling for each of the
+            ## 3 essential element types
             elif elem.tag == 'node':
                 mongo_obj = model_elem(elem)
             elif elem.tag == 'way':
@@ -306,13 +338,14 @@ def traverse_elements(osmFile):
                 data_obj_count[mongo_obj['datatype']].update(mongo_obj.keys())
                 f.write(json.dumps(mongo_obj, sort_keys=True, indent=4))
                 f.write(',\n')
+        # More helper text for valid JSON
         f.write('{}')
         f.write(']')
 
-    # Asserts every element has every attribute present
-    for tag in attrib_count:
-        for k,v in attrib_count[tag].items():
-            assert v == tag_count[tag]
+    # Asserts every element has every relevant attribute present
+    for element in attr_count:
+        for attr,count in attr_count[element].items():
+            assert count == element_count[element]
 
     # Asserts no elements contain text
     assert dict(with_text) == {}
@@ -326,18 +359,18 @@ def traverse_elements(osmFile):
             for child in children:
                 if c == child:
                     total += children[child]
-        assert total == tag_count[c]
+        assert total == element_count[c]
 
-    data_key = { '1_tag_count' : dict(tag_count) }
-    data_key['2_attribute_sample'] = dict(attribute_sample)
+    data_key = { '1_element_count' : dict(element_count) }
+    data_key['2_attribute_sample'] = dict(attr_sample)
     data_key['3_child_count'] = { parent: dict(child_count[parent])
                                     for parent in child_count }
     data_key['4_json_data_stats'] = { parent: dict(data_obj_count[parent])
                                     for parent in data_obj_count }
-    data_key['5_tag_attributes'] = tag_k_v 
+    data_key['5_tag_attributes'] = tag_sample
 
     with open('data_key.json','w') as f:
         json.dump(data_key, f, sort_keys=True, indent=4)
 
 if __name__ == "__main__":
-    traverse_elements('data/providence_et_al.xml')
+    parse_osm_xml('data/providence_et_al.xml')
