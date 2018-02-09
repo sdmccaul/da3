@@ -6,8 +6,6 @@ import pprint
 import json
 
 
-# street_type_re = re.compile(r'\b\S+\.?$', re.IGNORECASE)
-
 def model_zones(mongo_obj, k, v):
     mapped_zones = {
     #From 'buildings' field
@@ -220,22 +218,37 @@ def model_created_attrs(elem, mongo_obj):
     return mongo_obj
 
 def model_tag(tagElem, mongo_obj):
+    # Existing fields in the mongo_obj;
+    # we don't want them to be overwritten
     reserved = ['pos','created', 'datatype']
     k = tagElem.attrib['k']
     v = tagElem.attrib['v']
-    zones = [ 'building', 'amenity', 'leisure', 'landuse' ]
+    # On the off-chance there's a name collison,
+    # just skip and return
+    if k in reserved:
+        return mongo_obj
     if ':' in k:
+        # Building a nested dictionary 
+        ## Only split on the first colon
         parent, child = k.split(':',1)
         if parent in reserved:
             return mongo_obj
+        ## If the field doesn't exist in the mongo_obj,
+        ## create a new nested dictionary.
+        ## A field may already exist with the same name,
+        ## but storing a string value instead of a dictionary.
+        ## If so, overwrite.
         elif parent not in mongo_obj or isinstance(mongo_obj[parent], str):
             mongo_obj[parent] = { child: v }
+        ## Otherwise, add the sub-field to existing dictionary. 
         else:
             mongo_obj[parent][child] = v
         if parent == 'addr':
             mongo_obj = model_addr_val(mongo_obj, child)
     else:
         mongo_obj[k] = v
+    # Some 'k' values of interest
+    zones = [ 'building', 'amenity', 'leisure', 'landuse' ]
     if k in zones:
         mongo_obj = model_zones(mongo_obj, k, v)
     return mongo_obj

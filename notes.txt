@@ -4,6 +4,8 @@ assertions allow us to be naive in parsing element: no error handling
 focus on nested attribute values: dealing with double colons, overwrites
 
 to do: run percentage elements with tags, etc
+elements by user
+elements with tags by user, date
 
 Surprises: mostly ways with tags; top-level elements note and meta; 
 Attempt to get attribute counts via Mongo leads to sampling JSON data prior to output
