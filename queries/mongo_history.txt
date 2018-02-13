@@ -1,0 +1,786 @@
+help
+db.help()
+show dbs
+show collections
+show collections;
+use osm
+show collections
+db.help()
+db.collections.drop()
+osm.collections.drop()
+show collections
+db.pvd.drop()
+db.logout()
+show dbs
+use osm
+show collections
+db.pvd.find( { $text: { $search: 'coffee' }} )
+db.pvd.find( { building : { $exists:true } } )
+db.pvd.find( { building : { architecture: { $exists:true } } } )
+db.pvd.find( { building : { name: { $exists:true } } } )
+db.pvd.aggregate( [ $match: { building : { $exists:true } }, ] )
+db.pvd.aggregate( [ $match: { building : { $exists:true } }, $count : "total" ] )
+db.pvd.aggregate( [ { $match: { building : { $exists:true } } }, { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { name : { $exists:true } } }, { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { addr : { $exists:true } } }, { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { addr : { $exists:true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { addr : { street: { $exists:true } } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { building : { levels: { $exists:true } } } }, { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { addr : { city: { $exists:true } } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { created : { user: { $exists:true } } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { created.user: { $exists:true } } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { created.user: { $exists:true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "created.user": { $exists:true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "building.architecture": { $exists:true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "addr.street": { $exists:true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "node" } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "way" } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "relation" } } , { $count : "total" } ] )
+use osm
+history
+db.pvd.aggregate( [ { $match: { "datatype": "relation" } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "way" } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "node" } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "node", 'addr' : $exists } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "node", $exists : 'addr' } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "node", 'addr' : { $exists: true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { 'addr' : { $exists: true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "way", 'addr' : { $exists: true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "relation", 'addr' : { $exists: true } } } , { $count : "total" } ] )
+db.pvd.find({ "datatype": "relation", 'addr' : { $exists: true } })
+db.pvd.distinct( "addr.city" )
+db.pvd.distinct( "addr" )
+db.pvd.distinct( "addr.street" )
+db.pvd.distinct( "addr.housenumber" )
+db.pvd.distinct( "addr.postcode" )
+db.pvd.distinct( "addr.district" )
+db.pvd.distinct( "building" )
+db.pvd.aggregate( [ { $match: { "building" : { $exists: true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "building" : { $exists: true } } } , { $group : { _id : "$building", count: { $sum :1 } } } ] )
+db.pvd.aggregate( [ { $match: { "building" : { $exists: true } } } , { $group : { "$building" : { $sum :1 } } } ] )
+db.pvd.aggregate( [ { $match: { "building" : { $exists: true } } } , { $group : { "building" : { $sum :1 } } } ] )
+db.pvd.aggregate( [ { $match: { "building" : { $exists: true } } } , { $group : { _id : "$building", count: { $sum :1 } } } ] )
+db.pvd.distinct( "building" ).length
+db.pvd.distinct( "building" )
+db.pvd.aggregate( [ { $match: { "building" : { $exists: true } } } , { $group : { _id : "$building", count: { $sum :1 } } }, {$sort : {count : -1 } } ] )
+it
+db.pvd.aggregate( [ { $match: { "building" : { $exists: true } } } , { $group : { _id : "$building", count: { $sum :1 } } }, {$sort : {count : -1 } } ] )
+it
+db.pvd.aggregate( [ { $match: { "massgis" : { $exists: true } } } , { $group : { _id : "$massgis", count: { $sum :1 } } }, {$sort : {count : -1 } } ] )
+it
+db.pvd.aggregate( [ { $match: { "gnis" : { $exists: true } } } , { $group : { _id : "$gnis", count: { $sum :1 } } }, {$sort : {count : -1 } } ] )
+it
+db.pvd.distinct( "gnis" ).length
+db.pvd.distinct( "massgis" ).length
+db.pvd.aggregate( [ { $match: { "massgis" : { $exists: true } } } , { $group : { _id : "$massgis", count: { $sum :1 } } }, {$sort : {count : -1 } } ] )
+it
+db.pvd.aggregate( [ { $group : { _id : "$massgis", count: { $sum :1 } } }, {$sort : {count : -1 } } ] )
+it
+db.pvd.distinct( "source" ).length
+db.pvd.aggregate( [ { $group : { _id : "$source", count: { $sum :1 } } }, {$sort : {count : -1 } } ] )
+it
+db.pvd.aggregate( [ { $group : { _id : "$source", count: { $sum :1 } } }, {$sort : {count : -1 } } ] )
+use osm
+db.pvd.aggregate( [ { $group : { _id : "$source", count: { $sum :1 } } }, {$sort : {count : -1 } } ] )
+db.pvd.distinct( "source" ).length
+db.pvd.find( "source" ).length
+db.pvd.find( { "source" : {$exists:true}} ).length
+db.pvd.find( { "source" : { $exists:true } } ).count()
+db.pvd.aggregate( [ { $match: { "source" : { $exists:true } } }, { $group: { _id: "$datatype", count: {$sum : 1 } } } ] )
+db.pvd.aggregate( [ { $match: { "addr" : { $exists:true } } }, { $group: { _id: "$datatype", count: {$sum : 1 } } } ] )
+db.pvd.aggregate( [ { $match: { "building" : { $exists:true } } }, { $group: { _id: "$datatype", count: {$sum : 1 } } } ] )
+db.pvd.aggregate( [ { $match: { "gnis" : { $exists:true } } }, { $group: { _id: "$datatype", count: {$sum : 1 } } } ] )
+db.pvd.aggregate( [ { $match: { "massgis" : { $exists:true } } }, { $group: { _id: "$datatype", count: {$sum : 1 } } } ] )
+var ways = db.pvd.find( { "datatype" = "way" } );
+var ways = db.pvd.find( { "datatype": "way" } );
+ways.length
+ways.length()
+ways[0]
+Object.keys(ways[0])
+use osm
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { var cnt = {}; values.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } } return cnt; } ) })
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { var cnt = {}; values.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } return cnt; } ) })
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { var cnt = {}; values.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } return cnt; } ) }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { var cnt = {}; values.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } return Object.keys(cnt); } ) }, { out: {inline:1} })
+use osm
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { var cnt = {}; values.forEach( function(obj) { obj.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } return Object.keys(cnt); } ) } ) }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { var cnt = {}; values.forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } return Object.keys(cnt); } ) } ) }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { return Array.from(new Set(values)) }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { return values }, { out: {inline:1} })
+db.pvd.mapReduce( function() { var sngl = {}; Object.keys(this).forEach( function(ky) { sngl[ky] = 1; }) emit( this.datatype, sngl ); }, function(key, values) { return values }, { out: {inline:1} })
+db.pvd.mapReduce( function() { var sngl = {}; Object.keys(this).forEach( function(ky) { sngl[ky] = 1; }); emit( this.datatype, sngl ); }, function(key, values) { return values }, { out: {inline:1} })
+db.pvd.mapReduce( function() { var sngl = {}; Object.keys(this).forEach( function(ky) { sngl[ky] = 1; }); emit( this.datatype, sngl ); }, function(key, values) { var cnt = {}; values.forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } return Object.keys(cnt); } ) } ) }, { out: {inline:1} })
+db.pvd.mapReduce( function() { var sngl = {}; Object.keys(this).forEach( function(ky) { sngl[ky] = 1; }); emit( this.datatype, sngl ); }, function(key, values) { var cnt = {}; values.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } return Object.keys(cnt); } ) }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, this ); }, function(key, values) { var cnt = {}; values.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } return cnt; } ) }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, this ); }, function(key, values) { var cnt = {}; values.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } } ) return cnt; }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, this ); }, function(key, values) { var cnt = {}; values.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } } ); return cnt; }, { out: {inline:1} })
+db.pvd.mapReduce( function() { var sngl = {}; Object.keys(this).forEach( function(ky) { sngl[ky] = 1; }); emit( this.datatype, sngl ); }, function(key, values) { var cnt = {}; values.forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } return Object.keys(cnt); } ) } ) }, { out: {inline:1} })
+db.pvd.mapReduce( function() { var sngl = {}; Object.keys(this).forEach( function(ky) { sngl[ky] = 1; }); emit( this.datatype, sngl ); }, function(key, values) { var cnt = {}; values.forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } } ); } ); return cnt; }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, this ); }, function(key, values) { var cnt = {}; values.forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } } ); } ); return cnt; }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { var cnt = {}; values.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } } );  return cnt; }, { query: { 'out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { var cnt = {}; values.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } } );  return cnt; }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { var cnt = {}; values.forEach( function(ptyArray) { prtyArray.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } } ) } );  return cnt; }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, Object.keys(this) ); }, function(key, values) { var cnt = {}; values.forEach( function(ptyArray) { ptyArray.forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } } ) } );  return cnt; }, { out: {inline:1} })
+db.pvd.mapReduce( function() { emit( this.datatype, this ); }, function(key, values) { var cnt = {}; values.forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) {   cnt[pty] += 1; } else {   cnt[pty] = 1; } } ) } );  return cnt; }, { out: {inline:1} })
+use osm
+var ways = db.pvd.find( { "datatype": "way" } );
+ways
+var cnt = {};
+type(ways)
+typeof(ways)
+ways.length
+ways.length()
+ways[0]
+ways.forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) { cnt[pty] += 1 } else { cnt[pty]= 1 } }) } );
+cnt
+ways.forEach( function(obj) { return Object.keys(obj) ; } );
+cnt
+ways.forEach( function(obj) { return obj ; } );
+ways.forEach( function(obj) { return obj['_id'] ; } );
+ways.forEach( function(obj) { console.log(obj['_id']) ; } );
+ways[0]
+ways.forEach( function(obj) { print (obj['_id']) ; } );
+ways.forEach( function(obj) { print(obj['_id']) ; } );
+var cnt = {};
+use osm
+cnt
+db.pvd.find( {"datatype":"way"}).forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) { cnt[pty] += 1 } else { cnt[pty]= 1 } }) } );
+cnt
+db.pvd.distinct("highway");
+db.pvd.distinct("building");
+db.pvd.distinct("tiger");
+cnt
+db.pvd.distinct("condition");
+db.pvd.distinct("amenity");
+db.pvd.distinct("wikipedia");
+db.pvd.distinct("oneway");
+db.pvd.distinct("service");
+Object.keys(cnt).sort(function(a,b) { return cnt[a] - cnt[b] })
+db.pvd.distinct("leisure");
+db.pvd.distinct("landuse");
+cnt = {};
+db.pvd.find( {"datatype":"node"}).forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) { cnt[pty] += 1 } else { cnt[pty]= 1 } }) } );
+cnt
+use osm
+cnt
+db.pvd.find( {"datatype":"node"}).forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) { cnt[pty] += 1 } else { cnt[pty]= 1 } }) } );
+cnt
+db.pvd.distinct("amenity");
+db.pvd.distinct("religion");
+db.pvd.distinct("denomination");
+cnt
+Object.keys(cnt).sort(function(a,b) { return cnt[a] - cnt[b] })
+db.pvd.distinct("wikidata");
+Object.keys(cnt).sort(function(a,b) { return cnt[b] - cnt[a] })
+sort_keys = Object.keys(cnt).sort(function(a,b) { return cnt[b] - cnt[a] });
+sort_keys
+sort_keys.forEach( function(k) { print(k,cnt[k]) });
+db.pvd.distinct("natural");
+db.pvd.find({ "natural" : {$exists: true } }).length
+db.pvd.find({ "natural" : {$exists: true } }).length()
+db.pvd.find({ "highway" : {$exists: true } }).length()
+db.pvd.find({ "religion" : {$exists: true }, "denomination":{$exists :false } }).length()
+db.pvd.find({ "religion" : {$exists: false }, "denomination":{$exists :true } }).length()
+db.pvd.distinct("attribution");
+db.pvd.distinct("shop");
+cnt = {};
+db.pvd.find( {"natural": {$exists:true}}).forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) { cnt[pty] += 1 } else { cnt[pty]= 1 } }) } );
+cnt
+cnt = {}
+db.pvd.find( {"shop": {$exists:true}}).forEach( function(obj) { Object.keys(obj).forEach( function(pty) { if (cnt.hasOwnProperty(pty)) { cnt[pty] += 1 } else { cnt[pty]= 1 } }) } );
+cnt
+use osm
+db.pvd.findOne({"datatype":"way"})
+db.pvd.aggregate( [ {$match :{"datatype":"way"} }, {$group : { _id = null, count = { $avg : {$size : 'nd' } } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"way"} }, {$group : { _id : null, count : { $avg : {$size : 'nd' } } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"way"} }, { $project : { ndsz : { $size : 'nd' } } }, { $group : { _id : null, count : { $avg : 'ndsz' } } } ] )
+db.pvd.findOne({"datatype":"way"}).find( {$type : 'nd' } )
+db.pvd.findOne({"datatype":"way"}, {$type : 'nd' } )
+db.pvd.find({"datatype":"way"}, {$type : 'nd' } )
+db.pvd.findOne({"datatype":"way"}, {$size : 'nd' } )
+db.pvd.aggregate( [ {$match :{"datatype":"way"} }, {$group : { _id : null, count : { $avg : {$size : '$nd' } } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"way"} }, {$group : { _id : null, count : { $min : {$size : '$nd' } } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"way"} }, {$group : { _id : null, count : { $max : {$size : '$nd' } } } } ] )
+db.pvd.find({"datatype":"way"}, { 'nd' : { $size : 987 } } )
+db.pvd.find({"datatype":"way"}, { 'nd' : { $size : q } } )
+db.pvd.find({"datatype":"way"}, { 'nd' : { $size : w } } )
+db.pvd.find({"datatype":"way"}, { 'nd' : { $size : 2 } } )
+db.pvd.find({"datatype":"way", 'nd' : { $size : 2 } } )
+db.pvd.find({"datatype":"way", 'nd' : { $size : 987 } } )
+db.pvd.findOne({"datatype":"relation" } )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, {$group : { _id : null, count : { $max : {$size : '$member' } } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, {$group : { _id : null, count : { $avg : {$size : '$member' } } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, {$group : { _id : null, count : { $min : {$size : '$member' } } } } ] )
+db.pvd.find({"datatype":"relation", 'member' : { $size : 1 } } ).length()
+db.pvd.find({"datatype":"relation", 'member' : { $size : 1 } } )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, {$group : { _id : null, count : { $max : {$size : '$member' } } } } ] )
+db.pvd.find({"datatype":"relation", 'member' : { $size : 7590 } } )
+db.pvd.find({"datatype":"relation", 'member' : { $size : 7590 } }, {'member' : 0} )
+use osm
+db.pvd.distinct( "addr.street" );
+db.pvd.distinct( "addr.street" ).forEach( function(street) { return street.split()[-1] });
+db.pvd.distinct( "addr.street" ).forEach( function(street) { return street.split()[-1] }) );
+db.pvd.distinct( "addr.street" ).forEach( function(street) { return street.split()[-1]; }) );
+db.pvd.distinct( "addr.street" ).forEach( function(street) { return street.split()[-1]; });
+db.pvd.distinct( "addr.street" ).forEach( function(street) { return street.split(); });
+db.pvd.distinct( "addr.street" ).forEach( function(street) { return street ; });
+db.pvd.distinct( "addr.street" ).forEach( function(street) { print(street.split()[-1]) ; });
+db.pvd.distinct( "addr.street" ).forEach( function(street) { street.split()[-1] ; });
+strs = [];
+db.pvd.distinct( "addr.street" ).forEach( function(street) { strs.push(street.split()[-1]) ; });
+strs
+db.pvd.distinct( "addr.street" ).forEach( function(street) { strs.push(street.split(' ')[-1]) ; });
+strs
+strs = []
+db.pvd.distinct( "addr.street" ).forEach( function(street) { strs.push(street.split(' ')[-1]) ; });
+strs
+strs = []
+db.pvd.distinct( "addr.street" ).forEach( function(street) { strs.push(street.split(' ')) ; });
+strs
+strs[0][-1]
+strs[0]
+strs[0][1]
+strs = []
+street_set = new Set();
+db.pvd.distinct( "addr.street" ).forEach( function(street) { street_split = street.split(' '); street_set.add(street_split[street_split.length - 1]) ; });
+street_set
+strs = []
+db.pvd.distinct( "addr.street" ).forEach( function(street) { street_split = street.split(' '); strs.push(street_split[street_split.length - 1]) ; });
+strs
+street_count = {};
+strs.forEach( function(str) { if street_count.hasOwnProperty(str) { street_count[str] += 1} else { street_count[str] = 1 } });
+strs.forEach( function(str) { if (street_count.hasOwnProperty(str)) { street_count[str] += 1} else { street_count[str] = 1 } });
+street_count
+db.pvd.distinct( 'addr.postcode')
+db.pvd.find( {'addr.postcode' : '029212'} )
+use osm
+db.pvd.distinct( 'addr.housenumber')
+db.pvd.distinct( 'addr.postcode')
+db.pvd.find( {'addr.housenumber' : { $in :'[a-zA-Z]' } } )
+db.pvd.find( {'addr.housenumber' : { $in : [ '[a-zA-Z]' ]} } )
+db.pvd.find( {'addr.housenumber' : { $in : [ /[a-zA-Z]/ ]} } )
+use osm
+db.pvd.find( {'addr.housenumber' : { $in : [ '[a-zA-Z]' ]} } )
+db.pvd.find( {'addr.housenumber' : { $in : [ /[a-zA-Z]/ ]} } )
+db.pvd.find( {'addr.housenumber' : { $in : [ /[a-zA-Z]/ ]} }, { 'addr.housenumber':1 } )
+strs = []
+db.pvd.distinct( "addr.street" ).forEach( function(street) { street_split = street.split(' '); strs.push(street_split[street_split.length - 1]) ; });
+street_count = {};
+strs.forEach( function(str) { if (street_count.hasOwnProperty(str)) { street_count[str] += 1} else { street_count[str] = 1 } });
+street_count
+db.pvd.distinct( "addr.street" )
+use osm
+db.pvd.distinct( "addr.street" )
+db.pvd.distinct( "addr.postcode" )
+db.pvd.distinct( "addr.housenumber" )
+db.pvd.find( {'addr.housenumber' : { $in : [ /[a-zA-Z]/ ]} }, { 'addr.housenumber':1 } )
+db.pvd.find( {'addr.housenumber' : { $in : [ /[a-zA-Z]/ ]} } )
+db.pvd.distinct( "created.timestamp" )
+show collections
+use osm
+show collections
+db.pvd.drop()
+show collections
+use osm
+db.pvd.distinct( "addr.housenumber" )
+db.pvd.distinct( "addr.street" )
+db.pvd.find( {'created.timestamp' : ''} )
+db.pvd.distinct( "created.timestamp" )
+db.pvd.distinct( "addr.postcode" )
+use osm
+db.pvd.find( {'created.timestamp' : ''} ).length
+db.pvd.find( {'created.timestamp' : ''} ).length()
+db.pvd.find( {'created.timestamp' : { $ne :''} } ).length()
+db.pvd.find( 'created.timestamp' ).length()
+db.pvd.find( { 'created.timestamp' : { $exists : true } } ).length()
+db.pvd.length()
+db.pvd.count()
+db.pvd.drop()
+db.pvd.count()
+use osm
+db.pvd.count()
+db.pvd.find( {'pos' : null } )
+db.pvd.find( {'pos' : null } ).length()
+db.pvd.find( {'pos' : null } ).count()
+db.pvd.drop()
+use osm
+db.pvd.find( {'pos' : null } ).count()
+db.pvd.findOne( {'pos' : null } )
+use osm
+db.pvd.distinct("building");
+db.pvd.distinct("highway");
+db.pvd.distinct("amenity");
+db.pvd.distinct("service");
+db.pvd.distinct("leisure");
+b.pvd.distinct("landuse");
+db.pvd.distinct("landuse");
+db.pvd.distinct("condition");
+db.pvd.distinct("tiger");
+use osm
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : true } } } )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : {} } } } )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : { $exists: true } } } } )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : { * } } } } )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : { "$":"$" } } } } )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : ".$" } } } )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : "$" } } } )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : "fields.$" } } } )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : "fields" } } } )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : "$fields" } } } )
+db.pvd.aggregate( {$match: { "datatype": "relation" } } } )
+db.pvd.aggregate( {$match: { "datatype": "relation" } }  )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : "$$CURRENT" } } } )
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : "$$CURRENT" } } } ).count()
+db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : "$$CURRENT" } } } ).length()
+toes = db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : "$$CURRENT" } } } )
+toes.length()
+toes
+var toes = db.pvd.aggregate( {$group: { _id: "$datatype", mergedAtts: { $mergeObjects : "$$CURRENT" } } } )
+toes
+toes.length()
+toes.length
+use osm
+use osm
+db.pvd.findOne( {'pos' : null } )
+db.pvd.findOne( {'pos' : null } ).count()
+db.pvd.count( {'pos' : null } )
+db.pvd.count( {'created.timestampe' : null } )
+db.pvd.count( {'created.timestamp' : null } )
+db.pvd.count( { 'datatype': 'node', 'pos' : null } )
+db.pvd.find( { 'datatype': 'node', 'pos' : null } )
+it
+db.pvd.find( { 'datatype': 'node', 'pos' : null } ).distinct('user')
+db.pvd.find( { 'datatype': 'node', 'pos' : null } ).find('user')
+db.pvd.find( { 'datatype': 'node', 'pos' : null }, {'user':1})
+use osm
+db.pvd.distinct( { 'datatype': 'node', 'pos' : null }, {'user':1})
+db.pvd.distinct( 'user', { 'datatype': 'node', 'pos' : null })
+db.pvd.find( { 'datatype': 'node', 'pos' : null } )
+db.pvd.distinct( 'created.user', { 'datatype': 'node', 'pos' : null })
+use osm
+db.pvd.distinct('surface',{'datatype':'way'})
+db.pvd.distinct('highway',{'datatype':'way'})
+db.pvd.distinct('amenity',{'datatype':'way'})
+db.pvd.distinct('building',{'datatype':'way'})
+use osm
+db.pvd.distinct('building',{'datatype':'way'})
+db.pvd.distinct('amenity',{'datatype':'way'})
+db.pvd.distinct('leisure',{'datatype':'way'})
+db.pvd.distinct('service',{'datatype':'way'})
+db.pvd.distinct('natural',{'datatype':'way'})
+db.pvd.distinct('landuse',{'datatype':'way'})
+db.pvd.distinct('landuse')
+db.pvd.distinct('natural')
+db.pvd.distinct('service')
+db.pvd.distinct('leisure')
+db.pvd.distinct('amenity')
+use osm
+db.pvd.distinct('source')
+db.pvd.distinct('type')
+db.pvd.distinct('shop')
+db.pvd.distinct('amenity')
+db.pvd.distinct('parking')
+db.pvd.findOne({ 'parking': 1 })
+db.pvd.find({ 'parking': 1 })
+db.pvd.find('parking')
+db.pvd.find({ 'parking': {$exists :true } })
+db.pvd.find({ 'amenity': 'parking' } })
+db.pvd.find({ 'amenity': 'parking'  })
+it
+db.pvd.distinct('building')
+use osm
+db.pvd.distinct('building')
+use osm
+db.pvd.count({'building' : 'yes'})
+db.pvd.count({'building' : 'civic'})
+db.pvd.count({'building' : 'commerical'})
+db.pvd.count({'building' : 'commercial'})
+use osm
+db.pvd.count({'building.level' : "10"})
+db.pvd.count({'building.level' : 10})
+db.pvd.count({'building.levels' : 10})
+db.pvd.count({'building.levels' : "10"})
+db.pvd.find({'building.levels' : "10"})
+db.pvd.drop()
+db.pvd.distinct('zone')
+use osm
+db.pvd.distinct('zone')
+db.pvd.drop()
+use osm
+db.pvd.distinct('zone')
+db.pvd.count({'zone':{$exists:true}})
+db.pvd.find({'zone':'commercial'})
+db.pvd.count({'zone':'commercial'})
+db.pvd.count({'zone':'residential'})
+db.pvd.count({'zone':'industrial'})
+db.pvd.count({'zone':'civic'})
+db.pvd.find({'zone':'civic'})
+it
+db.pvd.find({'zone':'residential'})
+it
+use osm
+db.pvd.distinct('highway')
+db.pvd.distinct('surface')
+db.pvd.distinct('amenity')
+db.pvd.count({'building':{$exists:true}, 'amenity':{$exists:true} })
+db.pvd.find({'building':{$exists:true}, 'amenity':{$exists:true} })
+db.pvd.find({'building':'yes', 'amenity':{$exists:true} })
+db.pvd.count({'building':'yes', 'amenity':{$exists:true} })
+db.pvd.count({'building':{$ne:'yes'}, 'amenity':{$exists:true} })
+db.pvd.find({'building':{$ne:'yes'}, 'amenity':{$exists:true} })
+db.pvd.find({'building':{$exists: true, $ne:'yes'}, 'amenity':{$exists:true} })
+db.pvd.distinct('leisure')
+use osm
+db.pvd.count({'leisure':'yes'})
+db.pvd.distinct('leisure')
+db.pvd.count({'leisure':'bowling'})
+db.pvd.distinct({'leisure':'bowling'})
+db.pvd.find({'leisure':'bowling'})
+db.pvd.find({'leisure':'track'})
+it
+db.pvd.find({'leisure':'fitness centre'})
+db.pvd.find({'leisure':'fitness_centre'})
+db.pvd.find({'leisure':'sports_centre'})
+use osm
+db.pvd.distinct('service')
+db.pvd.count('service')
+db.pvd.count({$exists :'service' })
+db.pvd.count({'service':{$exists:true} })
+db.pvd.count({'service':{$exists:true}, 'datatype':'way' })
+db.pvd.distinct('natural')
+db.pvd.distinct('landuse')
+use osm
+db.pvd.drop()
+use osm
+db.pvd.count({'zone':{$exists:true}})
+db.pvd.find({'datatype':'node','zone':{$exists:true}})
+db.pvd.find({'datatype':'node','amenity':{$exists:true}})
+db.pvd.count({'zone':{$exists:true}})
+db.pvd.drop()
+use osm
+db.pvd.count({'zone':{$exists:true}})
+db.pvd.count()
+db.pvd.count({'zone':'industrial'})
+db.pvd.count({'zone':'commercial'})
+db.pvd.count({'zone':'civic'})
+db.pvd.count({'zone':'residential'})
+db.pvd.count({'zone':'residential', 'datatype':'node'})
+db.pvd.count({'zone':'civic', 'datatype':'node'})
+db.pvd.count({'zone':'commercial', 'datatype':'node'})
+db.pvd.count({'zone':'industrial', 'datatype':'node'})
+db.pvd.count({'zone':'industrial', 'datatype':'relation'})
+db.pvd.count({'zone':'civic', 'datatype':'relation'})
+db.pvd.count({'zone':'residential', 'datatype':'relation'})
+db.pvd.count({'datatype':'way'})
+db.pvd.count({'datatype':'node'})
+use osm
+db.pvd.find({'created.timestamp' : { $gte : new ISODate("2013-01-01T00:00:00Z") }} )
+db.pvd.find({'created.timestamp' : { $gte : new ISODate("2012-01-01T00:00:00Z") }} )
+db.pvd.find({'created.timestamp' : { $gte : new ISODate("2011-01-01T00:00:00Z") }} )
+db.pvd.find({'created.timestamp' : { $gte : new ISODate("2010-01-01T00:00:00Z") }} )
+db.pvd.findOne({'datatype':'node'})
+db.pvd.find({'created.timestamp' : { $gte : new ISODate("2006-01-01T00:00:00Z") }} )
+db.pvd.find({'created.timestamp' : { $gte : "2006-01-01T00:00:00Z" }} )
+db.pvd.find({'created.timestamp' : { $gte : "2012-01-01T00:00:00Z" }} )
+db.pvd.find({'created.timestamp' : { $gte : "2013-01-01T00:00:00Z" }} )
+db.pvd.count({'created.timestamp' : { $gte : "2013-01-01T00:00:00Z" }} )
+db.pvd.count({'created.timestamp' : { $lte : "2013-01-01T00:00:00Z" }} )
+db.pvd.count({"source" : "massgis_import_v0.1_20071009100855"} )
+db.pvd.count({"source" : {$exists:true}} )
+db.pvd.distinct("source")
+db.pvd.count({"source" : "massgis_import_v0.1_20071009100855"} )
+db.pvd.distinct('created.timestamp', {"source" : "massgis_import_v0.1_20071009100855"} )
+use osm
+db.pvd.aggregate([{ $project : { "count" : 1, "year" : {$year : "created.timestamp" } } }, { $group : { "_id" : "year", "total" {$sum : "count" } } }])
+db.pvd.aggregate([{ $project : { "count" : 1, "year" : {$year : "created.timestamp" } } }, { $group : { "_id" : "$year", "total" {$sum : "count" } } }])
+db.pvd.aggregate([{ "$project" : { "count" : 1, "year" : {"$year" : "created.timestamp" } } }, { "$group" : { "_id" : "$year", "total" {$sum : "count" } } }])
+db.pvd.aggregate([ { $project : { "count" : 1, "year" : { $year : "$created.timestamp" } } }, { "$group" : { "_id" : "$year", "total" {$sum : "count" } } }])
+db.pvd.aggregate([ { $project : { "count" : 1, "year" : { $year : "$created.timestamp" } } }, { $group : { "_id" : "$year", "total" {$sum : "count" } } }])
+db.pvd.aggregate([ { $project : { "count" : 1, "year" : { $year : "$created.timestamp" } } }, { $group : { "_id" : "year", "total" {$sum : "count" } } }])
+db.pvd.aggregate([ { $project : { "count" : 1, "year" : { $year : "$created.timestamp" } } }, { $group : { _id : "year", "total" {$sum : "count" } } }])
+db.pvd.aggregate([ { $project : { "count" : 1, "year" : { $year : "$created.timestamp" } } }, { $group : { _id : "$year", "total" {$sum : "$count" } } }])
+db.pvd.aggregate({ $project : { "count" : 1, "year" : { $year : "$created.timestamp" } } })
+db.pvd.aggregate({ $project : { "count" : 1, "year" : { $year : "$\created.timestamp" } } })
+db.pvd.aggregate({ $project : { "count" : 1, "year" : { $year : "created.timestamp" } } })
+db.pvd.aggregate({ $project : { "count" : 1, "year" : { $year : ISODate("created.timestamp") } } })
+db.pvd.aggregate({ $project : { "count" : 1, "year" : { $year : ISODate("$created.timestamp") } } })
+db.pvd.aggregate({ $project : "year" : ISODate("$created.timestamp") })
+db.pvd.aggregate({ $project : {"year" : ISODate("$created.timestamp")} })
+db.pvd.aggregate({ $project : {"year" : Date("$created.timestamp")} })
+db.pvd.aggregate({ $project : { "count" : 1, "year" : { $year : Date("$created.timestamp") } } })
+db.pvd.aggregate({ $project : {"year" : Date("$created.timestamp")} })
+db.pvd.aggregate([{ $project : {"cnv" : Date("$created.timestamp")} }, { $project : { 'year' : { $year : Date('cnv'} } } }])
+db.pvd.aggregate([{ $project : {"cnv" : Date("$created.timestamp")} }, { $project : { 'year' : { $year : Date('cnv')} } } }])
+db.pvd.aggregate([{ $project : {"cnv" : Date("$created.timestamp")} }, { $project : { 'year' : { $year : Date('cnv')} } } ])
+db.pvd.aggregate({ $project : {"year" : Date("$created.timestamp")} })
+db.pvd.aggregate({ $project : {"year" : IsoDate("$created.timestamp")} })
+db.pvd.aggregate({ $project : {"year" : ISODate("$created.timestamp")} })
+db.pvd.findOne({'created.timestamp': {$exists :true}})
+db.pvd.aggregate({ $project : {"year" : "created.timestamp")} })
+db.pvd.aggregate({ $project : {"year" : "created.timestamp"} })
+db.pvd.aggregate({ $project : {"year" : "$created.timestamp"} })
+db.pvd.aggregate({ $project : "year" { $year : "$created.timestamp"} })
+db.pvd.aggregate({ $project : "year": { $year : "$created.timestamp"} })
+db.pvd.aggregate({ $project : { "year": { $year : "$created.timestamp" } } })
+db.pvd.find({'created.timestamp' : {$not : {$type :9 } } })
+db.pvd.aggregate({ $project : { "year": { $year : { $date :"$created.timestamp" } } } })
+db.pvd.aggregate({ $project : { "year": { $year : ISODate("$created.timestamp") } } } )
+db.pvd.aggregate({ $project : {"year" : "created.timestamp")} })
+db.pvd.aggregate({ $project : {"year" : Date("created.timestamp") } })
+db.pvd.aggregate({ $project : {"year" : IsoDate("created.timestamp") } })
+db.pvd.aggregate({ $project : {"year" : ISODate("created.timestamp") } })
+db.pvd.aggregate({ $project : {"year" : ISODate("$created.timestamp") } })
+db.pvd.aggregate({ $project : {"year" : Date("$created.timestamp") } })
+db.pvd.findOne({'created.timestamp': {$exists :true}})
+db.pvd.find({'created.timestamp' : {$not : {$type :9 } } })
+db.pvd.aggregate({ $project : { "year": { $year : { $dateFromString : "$created.timestamp" } } } } )
+db.pvd.aggregate({ $project : { "year": { $year : { $dateFromString : { "created" : "$timestamp" } } } } } )
+db.pvd.aggregate({ $project : { "year": { $year : { $dateFromString : { "$created" : "$timestamp" } } } } } )
+db.pvd.aggregate({ $project : { "year": { $year : { $dateFromString : "$$created.timestamp" } } } } )
+db.pvd.aggregate({ $project : { "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } } )
+db.pvd.aggregate({ $project : { "tally" : 1, "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } } })
+db.pvd.aggregate({ $project : { "tally" : 1 , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } })
+db.pvd.aggregate({ $project : { "tally" : "1" , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } })
+db.pvd.aggregate({ $project : { "tally" : {$literal : 1 }, "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } })
+db.pvd.aggregate({ $project : { "tally" : "1" , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } })
+db.pvd.aggregate([{ $project : { "tally" : "1" , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } }, { $group : { _id : $year, "total" : {$sum :"tally" } } }])
+db.pvd.aggregate([{ $project : { "tally" : "1" , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } }, { $group : { _id : "year", "total" : {$sum :"tally" } } }])
+db.pvd.aggregate([{ $project : { "tally" : "1" , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } }, { $group : { _id : "$year", "total" : {$sum :"tally" } } }])
+db.pvd.aggregate([{ $project : { "tally" : {$literal : 1} , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } }, { $group : { _id : "$year", "total" : {$sum :"tally" } } }])
+db.pvd.aggregate({ $project : { "tally" : {$literal : 1 }, "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } })
+db.pvd.aggregate([{ $project : { "tally" : {$literal : 1} , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } }, { $group : { _id : "$year", "total" : {$sum :"$tally" } } }])
+db.pvd.aggregate([{ $project : { "tally" : {$literal : 1} , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } }, { $group : { _id : "$year", "total" : {$sum :"$tally" } } }, {$sort : { _id : 1 } }])
+use osm
+db.pvd.aggregate([{ $project : { "tally" : {$literal : 1} , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } }, { $group : { _id : "$year", "total" : {$sum :"$tally" } } }, {$sort : { _id : 1 } }])
+db.pvd.aggregate([ {$match : { $eq : [ { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } }, 2013 ] } }, { $project : { "tally" : {$literal : 1} , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } }, { $group : { _id : "$year", "total" : {$sum :"$tally" } } }, {$sort : { _id : 1 } }])
+db.pvd.aggregate([ {$match : { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } : 2013 } , { $project : { "tally" : {$literal : 1} , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } }, { $group : { _id : "$year", "total" : {$sum :"$tally" } } }, {$sort : { _id : 1 } }])
+db.pvd.aggregate([ { $match : { { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } : 2013 } } , { $project : { "tally" : {$literal : 1} , "year": { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } } }, { $group : { _id : "$year", "total" : {$sum :"$tally" } } }, {$sort : { _id : 1 } }])
+db.pvd.aggregate({ $match : { { $year : { $dateFromString : { 'dateString' : "$created.timestamp" } } } : 2013 } })
+db.pvd.find( { "created.timestamp" : { $and: [ { $gte : "2013-01-01T00:00:00Z" }, {$lt : "2014-01-01T00:00:00Z" } ] } } )
+db.pvd.find( { "created.timestamp" : { $gte : "2013-01-01T00:00:00Z" }, "created.timestamp" : {$lt : "2014-01-01T00:00:00Z" } } )
+var x = db.pvd.findOne();
+x
+x.created.timestamp
+ISODate(x.created.timestamp);
+var i = ISODate(x.created.timestamp);
+i
+i.getDay()
+i.getYear()
+i.getFullYear()
+db.pvd.find( { "created.timestamp" : { $gte : 2013 } } )
+db.pvd.find( { { $year : "created.timestamp" }: { $gte : 2013 } } )
+db.pvd.find( { "created.timestamp" : { $gte : ISODate("2013-01-01T00:00:00Z"), $lt : ISODate("2014-01-01T00:00:00Z") } } )
+i
+x
+x.created.timestamp > ISODate("2013-01-01T00:00:00Z")
+ISODate(x.created.timestamp) > ISODate("2013-01-01T00:00:00Z")
+x.created.timestamp < ISODate("2013-01-01T00:00:00Z")
+ISODate(x.created.timestamp) < ISODate("2013-01-01T00:00:00Z")
+use osm
+var cursor = db.pvd.find();
+while (cursor.hasNext()) { var doc = cursor.next(); db.pvd.update({ _id : doc._id}, { $set : { "created.timestamp" : ISODate("$created.timestamp") } }); }
+while (cursor.hasNext()) { var doc = cursor.next(); db.pvd.update({ _id : doc._id}, { $set : { created.timestamp : ISODate(doc.created.timestamp) } }); }
+use osm
+var x = db.pvd.findOne();
+x
+db.pvd.drop()
+use osm
+var x = db.pvd.findOne();
+x
+db.pvd.find( { _id : x._id } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate("$created.timstamp") } } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate("$$created.timstamp") } } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate("created.timstamp") } } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate(created.timstamp) } } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate($created.timstamp) } } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate($$created.timstamp) } } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate("$created.timestamp") } } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate($created.timestamp) } } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate($$created.timestamp) } } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate("$$created.timestamp") } } )
+db.pvd.find( { _id : x._id } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate("$$CURRENT.created.timestamp") } } )
+db.pvd.update( { _id : x._id }, { $set : { "created.timestamp" : ISODate($$CURRENT.created.timestamp) } } )
+db.pvd.aggregate( [ { $addFields : { "created.date" : ISODate("$created.timestamp") } }, { $out : "pvd" } ] )
+db.pvd.aggregate( [ { $addFields : { "created.date" : ISODate($created.timestamp) } }, { $out : "pvd" } ] )
+db.pvd.aggregate( [ { $addFields : { "created.date" : ISODate("$$CURRENT.created.timestamp") } }, { $out : "pvd" } ] )
+db.pvd.aggregate( [ { $addFields : { "created.date" : "$created.timestamp" } }, { $out : "pvd" } ] )
+db.pvd.findOne();
+db.pvd.aggregate( [ { $addFields : { "created.datez" : new ISODate("$created.timestamp") } }, { $out : "pvd" } ] )
+db.pvd.drop()
+use osm
+db.pvd.distinct( "created.month", {"created.year" : 2013 } )
+db.pvd.aggregate( [ { $match : {"created.year" : 2013 } }, {$group : { _id : "created.month", count: {$sum :1 } } }])
+db.pvd.aggregate( [ { $match : {"created.year" : 2013 } }, {$group : { _id : "$created.month", count: {$sum :1 } } }])
+db.pvd.aggregate( [ { $match : {"created.year" : 2013 } }, {$group : { _id : "$created.month", count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.distinct( "created.username" , {"created.year" : 2013, "created.month" : 4})
+db.pvd.distinct( "created.user" , {"created.year" : 2013, "created.month" : 4})
+use osm
+db.pvd.distinct( "created.user" , {"created.year" : 2013, "created.month" : 4})
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, {$sort : {"count": 1 } }])
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, {$sort : {"count": -1 } }])
+db.pvd.aggregate( [ { $match : {"created.year" : 2013 } }, {$group : { _id : "$created.month", count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.count({'created.user': "jremillard-massgis", 'created.year':2013,'created.month':4})
+use osm
+db.pvd.count({'created.user': "jremillard-massgis", 'created.year':2013,'created.month':4})
+db.pvd.aggregate( [ { $match : {"created.year" : 2013 } }, {$group : { _id : "$created.month", count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, {$sort : {"count": -1 } }])
+db.pvd.aggregate( [ { $match : {"created.user" : "jremillard-massgis" } }, {$group : { _id : "$created.year", count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate( [ { $match : {"created.user" : "jremillard-massgis" } }, {$group : { _id : {"year": "$created.year", "month": "created.month"}, count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate( [ { $match : {"created.user" : "jremillard-massgis" } }, {$group : { _id : {"year": "$created.year", "month": "$created.month"}, count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate( [ { $match : {"created.user" : "greggerm" } }, {$group : { _id : {"year": "$created.year", "month": "$created.month"}, count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate( [ { $match : {"created.user" : "woodpeck_fixbot" } }, {$group : { _id : {"year": "$created.year", "month": "$created.month"}, count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate( [ { $match : {"created.user" : "azsr" } }, {$group : { _id : {"year": "$created.year", "month": "$created.month"}, count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate( [ { $match : {"created.user" : "Zirnch" } }, {$group : { _id : {"year": "$created.year", "month": "$created.month"}, count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate( [ { $match : {"created.user" : "MassGIS Import" } }, {$group : { _id : {"year": "$created.year", "month": "$created.month"}, count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, {$sort : {"count": -1 } }])
+it
+db.pvd.aggregate( [ {$group : { _id : {"year": "$created.year", "month": "$created.month", "user":"$created.user" }, count: {$sum :1 } } }, {$match : {"count" : {$gte :500} } }, {$sort : {_id: 1 } }])
+it
+db.pvd.aggregate( [ {$group : { _id : {"year": "$created.year", "month": "$created.month", "user":"$created.user" }, count: {$sum :1 } } }, {$match : {"count" : {$gte :10} } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate( [ {$group : { _id : {"year": "$created.year", "month": "$created.month" }, count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+use osm
+bd.pvd.findOne({'created.year'}:2017})
+bd.pvd.findOne({'created.year':2017})
+db.pvd.findOne({'created.year':2017})
+db.pvd.aggregate( [ {$group : { _id : {"year": "$created.year", "month": "$created.month" }, count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+it
+use osm
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, {$sort : {"count": -1 } }])
+it
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, { $match : { "count" : { $gte : 400 } } } ])
+it
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, { $match : { "count" : { $gte : 400 } } }, {$project : {_id :1 } } ])
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, { $match : { "count" : { $gte : 400 } } }, {$project : {_id :1 } } ]).forEach( function(obj) { return obj._id })
+var plus400 = [];
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, { $match : { "count" : { $gte : 400 } } }, {$project : {_id :1 } } ]).forEach( function(obj) { plus400.push(obj._id) })
+plus400
+db.pvd.aggregate( [ {$match : { $in : { "created.user", plus400 } } }, {$group : { _id : {"year": "$created.year", "month": "$created.month", "user":"$created.user" }, count: {$sum :1 } } }, {$match : {"count" : {$gte :500} } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate( [ {$match : { $in : [ "created.user", plus400 ] } }, {$group : { _id : {"year": "$created.year", "month": "$created.month", "user":"$created.user" }, count: {$sum :1 } } }, {$match : {"count" : {$gte :500} } }, {$sort : {_id: 1 } }])
+db.pvd.aggregate( {$match : { $in : [ "created.user", plus400 ] } } )
+db.pvd.aggregate( {$match : { "created.user" : { $in : plus400 } } } )
+db.pvd.aggregate( [ {$match : { "created.user" : { $in: plus400  } } }, {$group : { _id : {"year": "$created.year", "month": "$created.month", "user":"$created.user" }, count: {$sum :1 } } }, {$match : {"count" : {$gte :500} } }, {$sort : {_id: 1 } }])
+it
+db.pvd.aggregate( [ {$match : { "created.user" : { $in: plus400  } } }, {$group : { _id : {"year": "$created.year", "month": "$created.month", "user":"$created.user" }, count: {$sum :1 } } }, {$sort : {_id: 1 } }])
+it
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, {$sort : {"count": -1 } }])
+var users = db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, {$sort : {"count": -1 } }]);
+users
+var flt = users.filter( function(obj) { if (obj.count > 400) {     return obj._id; } });
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, { $match : { "count" : { $gte : 400 } } } ]).map( function(obj) { return obj._id })
+db.stats()
+use osm
+db.stats()
+show dbs
+db
+show dbs
+use rabviz
+db.forceegde
+;
+db.forceegde.find('foo')
+db.stats()
+db.force-egde.find('foo')
+show collections
+db.force-edge.drop()
+db.force\-edge.drop()
+db.dropDatabase()
+db
+use osm
+show dbs
+use rabviz
+show collections
+db.forceEdge.findOne()
+db.forceEdge.find()
+db.stats()
+use osm
+db.stats()
+show collections
+use rabviz
+show dbs
+use rabviz
+db.forceEdge.find({'rabid' : 'http://vivo.brown.edu/individual/aamin'})
+db.forceEdge.find({'rabid' : 'http://vivo.brown.edu/individual/jmachan'})
+use osm
+db.stats()
+show dbs
+use osm
+db.pvd.drop()
+show dbs
+db.stats()
+use osm
+db.stats()
+db.pvd.count()
+db.pvd.count({'datatype' : 'node'})
+db.pvd.count({'datatype' : 'way'})
+db.pvd.count({'datatype' : 'relation'})
+db.pvd.distinct('user').length
+db.pvd.distinct('created.user')
+db.pvd.distinct('created.user').length
+db.pvd.aggregate([ {'$group' : { '_id': 'created.user', 'count' : { '$sum' : 1} } } ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } } ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {$sort : {count : -1 } } ])
+history
+db.pvd.aggregate( [ { $match: { "datatype": "node", 'addr' : $exists } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "node", 'addr' : { $exists : true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "way", 'addr' : { $exists : true } } } , { $count : "total" } ] )
+db.pvd.aggregate( [ { $match: { "datatype": "way", 'relation' : { $exists : true } } } , { $count : "total" } ] )
+db.pvd.findOne({'datatype':'node'})
+obj = db.pvd.findOne({'datatype':'node'})
+objs
+obj
+obj.length
+obj.keys()
+obj.keys
+Object.keys(obj)
+db.pvd.aggregate( [ {$match :{"datatype":"way"} }, {$group : { _id : null, count : { $max : {$size : '$nd' } } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"way"} }, {$group : { _id : null, count : { $avg : {$size : '$nd' } } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"way"} }, {$group : { _id : null, count : { $min : {$size : '$nd' } } } } ] )
+obj
+obj.bsonsize()
+obj.hasOwnProperty()
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, {$objectToArray : "$$CURRENT" }  ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, { '$project' : {$objectToArray : "$$CURRENT" } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, { '$project' : { 'foo' : { $objectToArray : "$$CURRENT" } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, { '$project' : { 'foo' : { $size { $objectToArray : "$$CURRENT" } } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, { '$project' : { 'foo' : { $size : { $objectToArray : "$$CURRENT" } } } } ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, { '$project' : { 'foo' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'bar', cond: {$not : { $in : '$$bar.k', ['_id','created','datatype'] } } } } } } }  ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, { '$project' : { 'foo' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'bar', cond: {$not : { $in : ['$$bar.k', ['_id','created','datatype'] ] } } } } } } }  ] )
+db.pvd.find({"_id" : "5a82f00bfb7723fd3209fa88"})
+db.pvd.find({"_id" : ObjectId("5a82f00bfb7723fd3209fa88")})
+obj  = db.pvd.find({"_id" : ObjectId("5a82f00bfb7723fd3209fa88")})
+obj
+var obj  = db.pvd.find({"_id" : ObjectId("5a82f00bfb7723fd3209fa88")});
+obj
+Object.keys(obj)
+obj
+var obj  = db.pvd.find({"_id" : ObjectId("5a82f00bfb7723fd3209fa88")});
+Object.keys(obj)
+var obj  = db.pvd.findOne({"_id" : ObjectId("5a82f00bfb7723fd3209fa88")});
+Object.keys(obj)
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, { '$project' : { 'type: 'datatype', 'field_count' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }  ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, { '$project' : { 'field_count' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }  ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, { '$project' : { 'datatype: 'field_count' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }  ] )
+db.pvd.aggregate( [ {$match :{"datatype":"relation"} }, { '$project' : { 'datatype': '$datatype', 'field_count' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }  ] )
+db.pvd.aggregate( [ { '$project' : { 'datatype': '$datatype', 'field_count' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }, {$group : {"_id" : "$datatype", "fields" : { $avg : "field_count" } } } ] )
+db.pvd.aggregate( [ { '$project' : { 'datatype': '$datatype', 'field_count' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }, {$group : {"_id" : "$datatype", "fields" : { $avg : "$field_count" } } } ] )
+db.pvd.aggregate( [ {$group : {"_id" : "$datatype", "field_count" : { $avg : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } } } ] )
+db.pvd.aggregate( [ {$group : {"_id" : "$datatype", "field_count" : { $max : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } } } ] )
+db.pvd.aggregate( [ {$group : {"_id" : "$datatype", "field_count" : { $min : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } } } ] )
+db.pvd.aggregate( [ {$group : {"_id" : "$datatype", "field_count" : { $stdDevPop : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } } } ] )
+db.pvd.aggregate( [ {$project : { 'datatype': "$datatype", "field_count" : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }, {$match : {"field_count": 1} }, {$group : { '_id' = '$datatype'}, 'count' : {$sum :1 } }  ]  )
+db.pvd.aggregate( [ {$project : { 'datatype': "$datatype", "field_count" : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }, {$match : {"field_count": 1} }, {$group : { '_id' : '$datatype', 'count' : { $sum :1 } } }  ]  )
+db.pvd.aggregate( [ {$project : { 'datatype': '$datatype', 'field_count' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }, {$match : {'field_count': { $ne : 1 } } }, {$group : { '_id' : '$datatype', 'count' : { $sum :1 } } }  ]  )
+db.pvd.aggregate( [ {$project : { 'datatype': '$datatype', 'field_count' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }, {$match : {'field_count': { $ne : 1 } } }, {$group : { '_id' : '$datatype', 'count' : { $avg : '$field_count' } } }  ]  )
+db.pvd.aggregate( [ {$project : { 'datatype': '$datatype', 'field_count' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }, {$match : {'field_count': { $ne : 1 } } }, {$group : { '_id' : '$datatype', 'count' : { $min : '$field_count' } } }  ]  )
+db.pvd.aggregate( [ {$project : { 'datatype': '$datatype', 'field_count' : { $size : { $filter : { input: { $objectToArray : "$$CURRENT" }, as:'field', cond: {$not : { $in : ['$$field.k', ['_id','created','datatype'] ] } } } } } } }, {$match : {'field_count': { $ne : 1 } } }, {$group : { '_id' : '$datatype', 'count' : { $stdDevPop : '$field_count' } } }  ]  )
+db.pvd.find({ $size : { "members" : 7590 } })
+db.pvd.find({ "members" : {$size : 7590 } })
+db.pvd.findOne({ "nd" : {$size : 2 } })
+db.pvd.findOne({ "member" : {$size : 2 } })
+db.pvd.findOne({ "member" : {$size : 7590 } })
+db.pvd.findOne({ "nd" : {$size : 987 } })
+db.pvd.find({ "nd" : {$size : 987 } })
+db.pvd.distinct("addr.postalcode")
+db.pvd.distinct("addr.postcode")
+db.pvd.distinct("addr.district")

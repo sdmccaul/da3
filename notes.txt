@@ -79,6 +79,10 @@ history
 # https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html
 # https://stackoverflow.com/questions/11976503/how-to-keep-index-when-using-pandas-merge
 # http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.rename.html
+import pandas as pd
+import json
+import matplotlib.pyplot as plt
+
 with open('data/filtered_user_date.json','r') as f:
     jdata = json.load(f)
 data = [ { 'jnr' : "{0}-{1}".format(d['_id']['year'], d['_id']['month']), "user": d['_id']['user'], "count" : d['count'] } for d in jdata ]

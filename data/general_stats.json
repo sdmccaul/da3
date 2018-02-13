@@ -1,0 +1,427 @@
+{
+	"db_overeview" : {
+		"db" : "osm",
+		"collections" : 1,
+		"views" : 0,
+		"objects" : 821910,
+		"avgObjSize" : 260.47202856760475,
+		"dataSize" : 214084565,
+		"storageSize" : 61374464,
+		"numExtents" : 0,
+		"indexes" : 1,
+		"indexSize" : 8048640,
+		"fsUsedSize" : 32098787328,
+		"fsTotalSize" : 51471126528,
+		"ok" : 1
+	},
+	"nodes" : 720267,
+	"ways" : 101306,
+	"relations" : 337,
+	"distinct_users" : 605,
+	"user_counts" : [
+		{
+			"_id" : "pratikyadav",
+			"count" : 171
+		},
+		{
+			"_id" : "amillar",
+			"count" : 180
+		},
+		{
+			"_id" : "Maskulinum",
+			"count" : 180
+		},
+		{
+			"_id" : "Steven Deeds",
+			"count" : 183
+		},
+		{
+			"_id" : "chehrlic",
+			"count" : 186
+		},
+		{
+			"_id" : "BMS_FLL_2013",
+			"count" : 190
+		},
+		{
+			"_id" : "KristenK",
+			"count" : 190
+		},
+		{
+			"_id" : "ed_borges91",
+			"count" : 191
+		},
+		{
+			"_id" : "JJab",
+			"count" : 193
+		},
+		{
+			"_id" : "RichRico",
+			"count" : 196
+		},
+		{
+			"_id" : "JJayzX",
+			"count" : 204
+		},
+		{
+			"_id" : "swhite3137",
+			"count" : 207
+		},
+		{
+			"_id" : "Jumpingjackz",
+			"count" : 207
+		},
+		{
+			"_id" : "Walleye2013",
+			"count" : 224
+		},
+		{
+			"_id" : "rad1ance",
+			"count" : 234
+		},
+		{
+			"_id" : "blueteam",
+			"count" : 237
+		},
+		{
+			"_id" : "maptastical",
+			"count" : 240
+		},
+		{
+			"_id" : "calfarome",
+			"count" : 241
+		},
+		{
+			"_id" : "openstreeteditor345789",
+			"count" : 244
+		},
+		{
+			"_id" : "pyram",
+			"count" : 251
+		},
+		{
+			"_id" : "Jason78",
+			"count" : 271
+		},
+		{
+			"_id" : "RyanP724",
+			"count" : 274
+		},
+		{
+			"_id" : "dannykath",
+			"count" : 276
+		},
+		{
+			"_id" : "Downy288",
+			"count" : 292
+		},
+		{
+			"_id" : "mvexel",
+			"count" : 292
+		},
+		{
+			"_id" : "cjudge05",
+			"count" : 308
+		},
+		{
+			"_id" : "The Inning Club",
+			"count" : 331
+		},
+		{
+			"_id" : "SK53",
+			"count" : 344
+		},
+		{
+			"_id" : "martini_p",
+			"count" : 346
+		},
+		{
+			"_id" : "samely",
+			"count" : 350
+		},
+		{
+			"_id" : "sfn",
+			"count" : 360
+		},
+		{
+			"_id" : "DavidZ",
+			"count" : 372
+		},
+		{
+			"_id" : "OldShamanizer",
+			"count" : 372
+		},
+		{
+			"_id" : "Windows98",
+			"count" : 378
+		},
+		{
+			"_id" : "oba510",
+			"count" : 387
+		},
+		{
+			"_id" : "Shadow187",
+			"count" : 388
+		},
+		{
+			"_id" : "andrewbenedictwallace",
+			"count" : 429
+		},
+		{
+			"_id" : "mcaldwell_1372",
+			"count" : 433
+		},
+		{
+			"_id" : "Ahlzen",
+			"count" : 438
+		},
+		{
+			"_id" : "eminence",
+			"count" : 439
+		},
+		{
+			"_id" : "Yoshinion",
+			"count" : 440
+		},
+		{
+			"_id" : "user_5359",
+			"count" : 443
+		},
+		{
+			"_id" : "oldtopos",
+			"count" : 447
+		},
+		{
+			"_id" : "Downy_288",
+			"count" : 450
+		},
+		{
+			"_id" : "LinusA",
+			"count" : 485
+		},
+		{
+			"_id" : "Coolc6401",
+			"count" : 531
+		},
+		{
+			"_id" : "iandees",
+			"count" : 536
+		},
+		{
+			"_id" : "Luis36995",
+			"count" : 554
+		},
+		{
+			"_id" : "RoadGeek_MD99",
+			"count" : 557
+		},
+		{
+			"_id" : "osm2xp",
+			"count" : 561
+		},
+		{
+			"_id" : "brianjmcguirk",
+			"count" : 614
+		},
+		{
+			"_id" : "JessAk71",
+			"count" : 616
+		},
+		{
+			"_id" : "GeoStudent",
+			"count" : 628
+		},
+		{
+			"_id" : "siranachronist",
+			"count" : 637
+		},
+		{
+			"_id" : "blahedo",
+			"count" : 688
+		},
+		{
+			"_id" : "Ken Horn",
+			"count" : 708
+		},
+		{
+			"_id" : "cybhunter",
+			"count" : 715
+		},
+		{
+			"_id" : "DaveHansenTiger",
+			"count" : 728
+		},
+		{
+			"_id" : "tbhartman",
+			"count" : 792
+		},
+		{
+			"_id" : "Spinosaursus",
+			"count" : 796
+		},
+		{
+			"_id" : "mahahahaneapneap",
+			"count" : 854
+		},
+		{
+			"_id" : "Latze",
+			"count" : 892
+		},
+		{
+			"_id" : "ftavares87",
+			"count" : 914
+		},
+		{
+			"_id" : "gdt",
+			"count" : 914
+		},
+		{
+			"_id" : "OMMB",
+			"count" : 1005
+		},
+		{
+			"_id" : "swimdb",
+			"count" : 1016
+		},
+		{
+			"_id" : "KindredCoda",
+			"count" : 1062
+		},
+		{
+			"_id" : "tebiggs",
+			"count" : 1179
+		},
+		{
+			"_id" : "Werewombat",
+			"count" : 1210
+		},
+		{
+			"_id" : "Durango",
+			"count" : 1219
+		},
+		{
+			"_id" : "jamacho",
+			"count" : 1282
+		},
+		{
+			"_id" : "choess",
+			"count" : 1486
+		},
+		{
+			"_id" : "JasonWoof",
+			"count" : 1520
+		},
+		{
+			"_id" : "Outlier73",
+			"count" : 1719
+		},
+		{
+			"_id" : "ZeLonewolf",
+			"count" : 1892
+		},
+		{
+			"_id" : "underorbit",
+			"count" : 2287
+		},
+		{
+			"_id" : "Leo22",
+			"count" : 2746
+		},
+		{
+			"_id" : "TIGERcnl",
+			"count" : 3069
+		},
+		{
+			"_id" : "Peter Dobratz",
+			"count" : 3331
+		},
+		{
+			"_id" : "Alan Bragg",
+			"count" : 3351
+		},
+		{
+			"_id" : "NE2",
+			"count" : 3840
+		},
+		{
+			"_id" : "morganwahl",
+			"count" : 3850
+		},
+		{
+			"_id" : "crschmidt",
+			"count" : 4390
+		},
+		{
+			"_id" : "42429",
+			"count" : 4473
+		},
+		{
+			"_id" : "Di Splainame",
+			"count" : 4487
+		},
+		{
+			"_id" : "miluethi",
+			"count" : 4637
+		},
+		{
+			"_id" : "EmilyPPP",
+			"count" : 4703
+		},
+		{
+			"_id" : "maxerickson",
+			"count" : 6285
+		},
+		{
+			"_id" : "OceanVortex",
+			"count" : 6472
+		},
+		{
+			"_id" : "jerryam",
+			"count" : 7101
+		},
+		{
+			"_id" : "Alex KG Ellis",
+			"count" : 7742
+		},
+		{
+			"_id" : "wambag",
+			"count" : 8205
+		},
+		{
+			"_id" : "John Wrenn",
+			"count" : 9304
+		},
+		{
+			"_id" : "bot-mode",
+			"count" : 9367
+		},
+		{
+			"_id" : "Roman Guy",
+			"count" : 10469
+		},
+		{
+			"_id" : "MassGIS Import",
+			"count" : 26257
+		},
+		{
+			"_id" : "Zirnch",
+			"count" : 29510
+		},
+		{
+			"_id" : "azsr",
+			"count" : 30491
+		},
+		{
+			"_id" : "woodpeck_fixbot",
+			"count" : 118087
+		},
+		{
+			"_id" : "greggerm",
+			"count" : 191072
+		},
+		{
+			"_id" : "jremillard-massgis",
+			"count" : 262718
+		}
+	]
+}
