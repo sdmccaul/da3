@@ -1,6 +1,3 @@
-MongoDB shell version v3.6.1
-connecting to: mongodb://127.0.0.01:27017/osm
-MongoDB server version: 3.6.1
 {
 	"relations" : {
 		"max_members" : [
@@ -45,49 +42,49 @@ MongoDB server version: 3.6.1
 	"all_docs" : {
 		"field_count_avg" : [
 			{
-				"_id" : "node",
-				"fields" : 1.103486623710374
+				"_id" : "relation",
+				"fields" : 5.287833827893175
 			},
 			{
 				"_id" : "way",
 				"fields" : 2.9946597437466687
 			},
 			{
-				"_id" : "relation",
-				"fields" : 5.287833827893175
+				"_id" : "node",
+				"fields" : 1.103486623710374
 			}
 		],
 		"field_count_std" : [
 			{
-				"_id" : "node",
-				"fields" : 0.5036761786189048
+				"_id" : "relation",
+				"fields" : 2.84781144491683
 			},
 			{
 				"_id" : "way",
 				"fields" : 1.6056251153828234
 			},
 			{
-				"_id" : "relation",
-				"fields" : 2.84781144491683
+				"_id" : "node",
+				"fields" : 0.5036761786189048
 			}
 		],
 		"field_count_max" : [
 			{
-				"_id" : "node",
-				"fields" : 14
+				"_id" : "relation",
+				"fields" : 20
 			},
 			{
 				"_id" : "way",
 				"fields" : 18
 			},
 			{
-				"_id" : "relation",
-				"fields" : 20
+				"_id" : "node",
+				"fields" : 14
 			}
 		],
 		"field_count_min" : [
 			{
-				"_id" : "node",
+				"_id" : "relation",
 				"fields" : 1
 			},
 			{
@@ -95,7 +92,7 @@ MongoDB server version: 3.6.1
 				"fields" : 1
 			},
 			{
-				"_id" : "relation",
+				"_id" : "node",
 				"fields" : 1
 			}
 		]
@@ -103,58 +100,58 @@ MongoDB server version: 3.6.1
 	"fltrd_docs" : {
 		"docs_with_1_field" : [
 			{
-				"_id" : "node",
-				"count" : 683566
+				"_id" : "relation",
+				"count" : 2
 			},
 			{
 				"_id" : "way",
 				"count" : 306
 			},
 			{
-				"_id" : "relation",
-				"count" : 2
+				"_id" : "node",
+				"count" : 683566
 			}
 		],
 		"docs_with_gt_1_field_count" : [
 			{
-				"_id" : "node",
-				"count" : 36701
+				"_id" : "relation",
+				"count" : 335
 			},
 			{
 				"_id" : "way",
 				"count" : 101000
 			},
 			{
-				"_id" : "relation",
-				"count" : 335
+				"_id" : "node",
+				"count" : 36701
 			}
 		],
 		"docs_with_gt_1_field_avg" : [
 			{
-				"_id" : "node",
-				"count" : 3.030952835072614
+				"_id" : "relation",
+				"count" : 5.313432835820896
 			},
 			{
 				"_id" : "way",
 				"count" : 3.00070297029703
 			},
 			{
-				"_id" : "relation",
-				"count" : 5.313432835820896
+				"_id" : "node",
+				"count" : 3.030952835072614
 			}
 		],
 		"docs_with_gt_1_field_std" : [
 			{
-				"_id" : "node",
-				"count" : 1.0315694432179363
+				"_id" : "relation",
+				"count" : 2.8369047418173365
 			},
 			{
 				"_id" : "way",
 				"count" : 1.6042917381449973
 			},
 			{
-				"_id" : "relation",
-				"count" : 2.8369047418173365
+				"_id" : "node",
+				"count" : 1.0315694432179363
 			}
 		]
 	}

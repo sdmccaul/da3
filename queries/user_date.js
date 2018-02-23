@@ -1,2 +1,0 @@
-var res = db.pvd.aggregate( [ {$group : { _id : {"year": "$created.year", "month": "$created.month", "user":"$created.user" }, count: {$sum :1 } } }, {$match : {"count" : {$gte :10} } }, {$sort : {_id: 1 } }]);
-printjson(res._batch);

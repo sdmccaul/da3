@@ -1,448 +1,32 @@
 [
 	{
 		"_id" : {
-			"year" : 2016,
+			"year" : 2017,
 			"month" : 5,
-			"user" : "Alan Bragg"
-		},
-		"count" : 2
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 10,
-			"user" : "azsr"
-		},
-		"count" : 6843
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 11,
-			"user" : "underorbit"
-		},
-		"count" : 1089
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 6,
-			"user" : "maxerickson"
-		},
-		"count" : 138
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 8,
-			"user" : "greggerm"
-		},
-		"count" : 1612
-	},
-	{
-		"_id" : {
-			"year" : 2011,
-			"month" : 3,
-			"user" : "NE2"
-		},
-		"count" : 7
-	},
-	{
-		"_id" : {
-			"year" : 2012,
-			"month" : 6,
-			"user" : "greggerm"
-		},
-		"count" : 1191
-	},
-	{
-		"_id" : {
-			"year" : 2012,
-			"month" : 10,
-			"user" : "greggerm"
-		},
-		"count" : 5028
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 11,
-			"user" : "John Wrenn"
-		},
-		"count" : 44
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 8,
-			"user" : "greggerm"
-		},
-		"count" : 2841
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 8,
-			"user" : "Zirnch"
-		},
-		"count" : 58
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 2,
-			"user" : "maxerickson"
-		},
-		"count" : 39
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 10,
-			"user" : "greggerm"
-		},
-		"count" : 5154
-	},
-	{
-		"_id" : {
-			"year" : 2012,
-			"month" : 1,
-			"user" : "Leo22"
-		},
-		"count" : 1330
-	},
-	{
-		"_id" : {
-			"year" : 2012,
-			"month" : 4,
-			"user" : "Leo22"
-		},
-		"count" : 174
-	},
-	{
-		"_id" : {
-			"year" : 2011,
-			"month" : 4,
-			"user" : "NE2"
-		},
-		"count" : 21
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 6,
-			"user" : "azsr"
-		},
-		"count" : 210
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 8,
-			"user" : "jerryam"
-		},
-		"count" : 1843
-	},
-	{
-		"_id" : {
-			"year" : 2007,
-			"month" : 10,
-			"user" : "MassGIS Import"
-		},
-		"count" : 26257
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 6,
-			"user" : "greggerm"
-		},
-		"count" : 1090
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 6,
-			"user" : "Zirnch"
-		},
-		"count" : 258
-	},
-	{
-		"_id" : {
-			"year" : 2012,
-			"month" : 1,
-			"user" : "greggerm"
-		},
-		"count" : 41774
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 7,
 			"user" : "wambag"
 		},
-		"count" : 7023
+		"count" : 1
 	},
 	{
 		"_id" : {
-			"year" : 2013,
-			"month" : 9,
-			"user" : "jremillard-massgis"
-		},
-		"count" : 2597
-	},
-	{
-		"_id" : {
-			"year" : 2016,
+			"year" : 2017,
 			"month" : 11,
-			"user" : "JasonWoof"
+			"user" : "Werewombat"
 		},
-		"count" : 36
+		"count" : 1
 	},
 	{
 		"_id" : {
-			"year" : 2008,
-			"month" : 2,
-			"user" : "KindredCoda"
+			"year" : 2017,
+			"month" : 4,
+			"user" : "azsr"
 		},
 		"count" : 3
 	},
 	{
 		"_id" : {
-			"year" : 2010,
-			"month" : 1,
-			"user" : "woodpeck_fixbot"
-		},
-		"count" : 2
-	},
-	{
-		"_id" : {
 			"year" : 2015,
 			"month" : 4,
-			"user" : "wambag"
-		},
-		"count" : 450
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 6,
-			"user" : "wambag"
-		},
-		"count" : 731
-	},
-	{
-		"_id" : {
-			"year" : 2012,
-			"month" : 6,
-			"user" : "Leo22"
-		},
-		"count" : 57
-	},
-	{
-		"_id" : {
-			"year" : 2010,
-			"month" : 1,
-			"user" : "NE2"
-		},
-		"count" : 97
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 1,
-			"user" : "greggerm"
-		},
-		"count" : 3621
-	},
-	{
-		"_id" : {
-			"year" : 2012,
-			"month" : 1,
-			"user" : "Peter Dobratz"
-		},
-		"count" : 3331
-	},
-	{
-		"_id" : {
-			"year" : 2008,
-			"month" : 12,
-			"user" : "KindredCoda"
-		},
-		"count" : 114
-	},
-	{
-		"_id" : {
-			"year" : 2012,
-			"month" : 4,
-			"user" : "OceanVortex"
-		},
-		"count" : 816
-	},
-	{
-		"_id" : {
-			"year" : 2009,
-			"month" : 9,
-			"user" : "woodpeck_fixbot"
-		},
-		"count" : 58833
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 11,
-			"user" : "azsr"
-		},
-		"count" : 13790
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 11,
-			"user" : "OceanVortex"
-		},
-		"count" : 8
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 5,
-			"user" : "jamacho"
-		},
-		"count" : 1282
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 11,
-			"user" : "greggerm"
-		},
-		"count" : 969
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 10,
-			"user" : "JasonWoof"
-		},
-		"count" : 20
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 4,
-			"user" : "choess"
-		},
-		"count" : 1485
-	},
-	{
-		"_id" : {
-			"year" : 2014,
-			"month" : 3,
-			"user" : "greggerm"
-		},
-		"count" : 46
-	},
-	{
-		"_id" : {
-			"year" : 2011,
-			"month" : 3,
-			"user" : "KindredCoda"
-		},
-		"count" : 158
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 10,
-			"user" : "42429"
-		},
-		"count" : 12
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 9,
-			"user" : "greggerm"
-		},
-		"count" : 1377
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 8,
-			"user" : "greggerm"
-		},
-		"count" : 4717
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 10,
-			"user" : "greggerm"
-		},
-		"count" : 758
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 12,
-			"user" : "greggerm"
-		},
-		"count" : 2740
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 11,
-			"user" : "JasonWoof"
-		},
-		"count" : 16
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 8,
-			"user" : "Di Splainame"
-		},
-		"count" : 308
-	},
-	{
-		"_id" : {
-			"year" : 2011,
-			"month" : 12,
-			"user" : "42429"
-		},
-		"count" : 1579
-	},
-	{
-		"_id" : {
-			"year" : 2008,
-			"month" : 12,
-			"user" : "Durango"
-		},
-		"count" : 413
-	},
-	{
-		"_id" : {
-			"year" : 2014,
-			"month" : 7,
-			"user" : "Leo22"
-		},
-		"count" : 210
-	},
-	{
-		"_id" : {
-			"year" : 2014,
-			"month" : 12,
-			"user" : "maxerickson"
-		},
-		"count" : 383
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 9,
 			"user" : "maxerickson"
 		},
 		"count" : 18
@@ -450,250 +34,66 @@
 	{
 		"_id" : {
 			"year" : 2013,
-			"month" : 12,
-			"user" : "greggerm"
+			"month" : 7,
+			"user" : "choess"
 		},
-		"count" : 345
+		"count" : 1
 	},
 	{
 		"_id" : {
 			"year" : 2016,
-			"month" : 1,
-			"user" : "greggerm"
-		},
-		"count" : 208
-	},
-	{
-		"_id" : {
-			"year" : 2010,
-			"month" : 11,
-			"user" : "42429"
-		},
-		"count" : 99
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 9,
-			"user" : "maxerickson"
-		},
-		"count" : 2328
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 8,
-			"user" : "underorbit"
-		},
-		"count" : 1198
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 7,
-			"user" : "jerryam"
-		},
-		"count" : 3988
-	},
-	{
-		"_id" : {
-			"year" : 2014,
-			"month" : 9,
-			"user" : "Di Splainame"
-		},
-		"count" : 24
-	},
-	{
-		"_id" : {
-			"year" : 2012,
-			"month" : 7,
-			"user" : "greggerm"
-		},
-		"count" : 3894
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 11,
-			"user" : "greggerm"
-		},
-		"count" : 364
-	},
-	{
-		"_id" : {
-			"year" : 2010,
-			"month" : 8,
-			"user" : "NE2"
+			"month" : 10,
+			"user" : "John Wrenn"
 		},
 		"count" : 1
 	},
 	{
 		"_id" : {
 			"year" : 2011,
-			"month" : 8,
-			"user" : "ZeLonewolf"
+			"month" : 12,
+			"user" : "NE2"
 		},
-		"count" : 57
+		"count" : 2
 	},
 	{
 		"_id" : {
-			"year" : 2012,
-			"month" : 3,
-			"user" : "greggerm"
-		},
-		"count" : 3073
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 5,
-			"user" : "Zirnch"
-		},
-		"count" : 539
-	},
-	{
-		"_id" : {
-			"year" : 2015,
+			"year" : 2013,
 			"month" : 10,
-			"user" : "Di Splainame"
+			"user" : "jremillard-massgis"
 		},
-		"count" : 1490
+		"count" : 23
 	},
 	{
 		"_id" : {
-			"year" : 2012,
-			"month" : 11,
-			"user" : "greggerm"
+			"year" : 2013,
+			"month" : 4,
+			"user" : "bot-mode"
 		},
-		"count" : 1467
+		"count" : 1130
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 7,
+			"user" : "woodpeck_fixbot"
+		},
+		"count" : 14
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 1,
+			"user" : "bot-mode"
+		},
+		"count" : 7826
 	},
 	{
 		"_id" : {
 			"year" : 2010,
-			"month" : 3,
-			"user" : "NE2"
-		},
-		"count" : 3
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 1,
-			"user" : "maxerickson"
-		},
-		"count" : 51
-	},
-	{
-		"_id" : {
-			"year" : 2014,
-			"month" : 4,
-			"user" : "greggerm"
-		},
-		"count" : 2144
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 12,
-			"user" : "Outlier73"
-		},
-		"count" : 224
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 11,
-			"user" : "OMMB"
-		},
-		"count" : 209
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 9,
-			"user" : "Outlier73"
-		},
-		"count" : 34
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 7,
-			"user" : "Outlier73"
-		},
-		"count" : 56
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 12,
-			"user" : "OMMB"
-		},
-		"count" : 224
-	},
-	{
-		"_id" : {
-			"year" : 2014,
-			"month" : 11,
-			"user" : "Di Splainame"
-		},
-		"count" : 231
-	},
-	{
-		"_id" : {
-			"year" : 2014,
-			"month" : 10,
-			"user" : "Di Splainame"
-		},
-		"count" : 46
-	},
-	{
-		"_id" : {
-			"year" : 2014,
-			"month" : 12,
-			"user" : "greggerm"
-		},
-		"count" : 45
-	},
-	{
-		"_id" : {
-			"year" : 2015,
 			"month" : 2,
-			"user" : "Di Splainame"
+			"user" : "crschmidt"
 		},
-		"count" : 120
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 4,
-			"user" : "greggerm"
-		},
-		"count" : 346
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 5,
-			"user" : "Di Splainame"
-		},
-		"count" : 245
-	},
-	{
-		"_id" : {
-			"year" : 2015,
-			"month" : 8,
-			"user" : "Di Splainame"
-		},
-		"count" : 40
-	},
-	{
-		"_id" : {
-			"year" : 2017,
-			"month" : 3,
-			"user" : "Outlier73"
-		},
-		"count" : 4
+		"count" : 48
 	},
 	{
 		"_id" : {
@@ -713,98 +113,1834 @@
 	},
 	{
 		"_id" : {
-			"year" : 2010,
-			"month" : 2,
-			"user" : "crschmidt"
+			"year" : 2017,
+			"month" : 3,
+			"user" : "Outlier73"
 		},
-		"count" : 48
+		"count" : 4
 	},
 	{
 		"_id" : {
-			"year" : 2013,
-			"month" : 1,
-			"user" : "bot-mode"
+			"year" : 2015,
+			"month" : 8,
+			"user" : "Di Splainame"
 		},
-		"count" : 7826
+		"count" : 40
 	},
 	{
 		"_id" : {
-			"year" : 2009,
-			"month" : 7,
-			"user" : "woodpeck_fixbot"
+			"year" : 2015,
+			"month" : 5,
+			"user" : "Di Splainame"
 		},
-		"count" : 14
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 4,
-			"user" : "bot-mode"
-		},
-		"count" : 1130
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 10,
-			"user" : "jremillard-massgis"
-		},
-		"count" : 23
-	},
-	{
-		"_id" : {
-			"year" : 2011,
-			"month" : 12,
-			"user" : "NE2"
-		},
-		"count" : 2
-	},
-	{
-		"_id" : {
-			"year" : 2016,
-			"month" : 10,
-			"user" : "John Wrenn"
-		},
-		"count" : 1
-	},
-	{
-		"_id" : {
-			"year" : 2013,
-			"month" : 7,
-			"user" : "choess"
-		},
-		"count" : 1
+		"count" : 245
 	},
 	{
 		"_id" : {
 			"year" : 2015,
 			"month" : 4,
+			"user" : "greggerm"
+		},
+		"count" : 346
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 2,
+			"user" : "Di Splainame"
+		},
+		"count" : 120
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 12,
+			"user" : "greggerm"
+		},
+		"count" : 45
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 10,
+			"user" : "Di Splainame"
+		},
+		"count" : 46
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 11,
+			"user" : "Di Splainame"
+		},
+		"count" : 231
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 12,
+			"user" : "OMMB"
+		},
+		"count" : 224
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 7,
+			"user" : "Outlier73"
+		},
+		"count" : 56
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 9,
+			"user" : "Outlier73"
+		},
+		"count" : 34
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 11,
+			"user" : "OMMB"
+		},
+		"count" : 209
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 12,
+			"user" : "Outlier73"
+		},
+		"count" : 224
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 4,
+			"user" : "greggerm"
+		},
+		"count" : 2144
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 1,
+			"user" : "maxerickson"
+		},
+		"count" : 51
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 3,
+			"user" : "NE2"
+		},
+		"count" : 3
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 11,
+			"user" : "greggerm"
+		},
+		"count" : 1467
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 10,
+			"user" : "Di Splainame"
+		},
+		"count" : 1490
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 5,
+			"user" : "Zirnch"
+		},
+		"count" : 539
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 3,
+			"user" : "greggerm"
+		},
+		"count" : 3073
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 8,
+			"user" : "ZeLonewolf"
+		},
+		"count" : 57
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 8,
+			"user" : "NE2"
+		},
+		"count" : 1
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 11,
+			"user" : "greggerm"
+		},
+		"count" : 364
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 7,
+			"user" : "greggerm"
+		},
+		"count" : 3894
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 9,
+			"user" : "Di Splainame"
+		},
+		"count" : 24
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 7,
+			"user" : "jerryam"
+		},
+		"count" : 3988
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 8,
+			"user" : "underorbit"
+		},
+		"count" : 1198
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 9,
+			"user" : "maxerickson"
+		},
+		"count" : 2328
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 11,
+			"user" : "42429"
+		},
+		"count" : 99
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 1,
+			"user" : "greggerm"
+		},
+		"count" : 208
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 12,
+			"user" : "greggerm"
+		},
+		"count" : 345
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 9,
 			"user" : "maxerickson"
 		},
 		"count" : 18
 	},
 	{
 		"_id" : {
-			"year" : 2017,
-			"month" : 4,
-			"user" : "azsr"
+			"year" : 2014,
+			"month" : 12,
+			"user" : "maxerickson"
 		},
-		"count" : 3
+		"count" : 383
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 7,
+			"user" : "Leo22"
+		},
+		"count" : 210
+	},
+	{
+		"_id" : {
+			"year" : 2008,
+			"month" : 12,
+			"user" : "Durango"
+		},
+		"count" : 413
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 12,
+			"user" : "42429"
+		},
+		"count" : 1579
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 8,
+			"user" : "Di Splainame"
+		},
+		"count" : 308
 	},
 	{
 		"_id" : {
 			"year" : 2017,
 			"month" : 11,
-			"user" : "Werewombat"
+			"user" : "JasonWoof"
+		},
+		"count" : 16
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 12,
+			"user" : "greggerm"
+		},
+		"count" : 2740
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 10,
+			"user" : "greggerm"
+		},
+		"count" : 758
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 8,
+			"user" : "greggerm"
+		},
+		"count" : 4717
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 9,
+			"user" : "greggerm"
+		},
+		"count" : 1377
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 10,
+			"user" : "42429"
+		},
+		"count" : 12
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 3,
+			"user" : "KindredCoda"
+		},
+		"count" : 158
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 3,
+			"user" : "greggerm"
+		},
+		"count" : 46
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 4,
+			"user" : "choess"
+		},
+		"count" : 1485
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 10,
+			"user" : "JasonWoof"
+		},
+		"count" : 20
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 11,
+			"user" : "greggerm"
+		},
+		"count" : 969
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 5,
+			"user" : "jamacho"
+		},
+		"count" : 1282
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 11,
+			"user" : "OceanVortex"
+		},
+		"count" : 8
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 11,
+			"user" : "azsr"
+		},
+		"count" : 13790
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 8,
+			"user" : "woodpeck_fixbot"
+		},
+		"count" : 13792
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 4,
+			"user" : "OceanVortex"
+		},
+		"count" : 816
+	},
+	{
+		"_id" : {
+			"year" : 2008,
+			"month" : 12,
+			"user" : "KindredCoda"
+		},
+		"count" : 114
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 1,
+			"user" : "Peter Dobratz"
+		},
+		"count" : 3331
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 1,
+			"user" : "greggerm"
+		},
+		"count" : 3621
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 1,
+			"user" : "NE2"
+		},
+		"count" : 97
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 6,
+			"user" : "Leo22"
+		},
+		"count" : 57
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 6,
+			"user" : "wambag"
+		},
+		"count" : 731
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 4,
+			"user" : "wambag"
+		},
+		"count" : 450
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 1,
+			"user" : "woodpeck_fixbot"
+		},
+		"count" : 2
+	},
+	{
+		"_id" : {
+			"year" : 2008,
+			"month" : 2,
+			"user" : "KindredCoda"
+		},
+		"count" : 3
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 11,
+			"user" : "JasonWoof"
+		},
+		"count" : 36
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 9,
+			"user" : "jremillard-massgis"
+		},
+		"count" : 2597
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 7,
+			"user" : "wambag"
+		},
+		"count" : 7023
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 1,
+			"user" : "greggerm"
+		},
+		"count" : 41774
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 6,
+			"user" : "Zirnch"
+		},
+		"count" : 258
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 6,
+			"user" : "greggerm"
+		},
+		"count" : 1090
+	},
+	{
+		"_id" : {
+			"year" : 2007,
+			"month" : 10,
+			"user" : "MassGIS Import"
+		},
+		"count" : 26257
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 8,
+			"user" : "jerryam"
+		},
+		"count" : 1843
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 6,
+			"user" : "azsr"
+		},
+		"count" : 210
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 4,
+			"user" : "NE2"
+		},
+		"count" : 21
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 4,
+			"user" : "Leo22"
+		},
+		"count" : 174
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 1,
+			"user" : "Leo22"
+		},
+		"count" : 1330
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 10,
+			"user" : "greggerm"
+		},
+		"count" : 5154
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 2,
+			"user" : "maxerickson"
+		},
+		"count" : 39
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 8,
+			"user" : "Zirnch"
+		},
+		"count" : 58
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 8,
+			"user" : "greggerm"
+		},
+		"count" : 2841
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 11,
+			"user" : "John Wrenn"
+		},
+		"count" : 44
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 10,
+			"user" : "greggerm"
+		},
+		"count" : 5028
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 6,
+			"user" : "greggerm"
+		},
+		"count" : 1191
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 3,
+			"user" : "NE2"
+		},
+		"count" : 7
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 8,
+			"user" : "greggerm"
+		},
+		"count" : 1612
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 6,
+			"user" : "maxerickson"
+		},
+		"count" : 138
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 11,
+			"user" : "underorbit"
+		},
+		"count" : 1089
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 10,
+			"user" : "azsr"
+		},
+		"count" : 6843
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 5,
+			"user" : "Alan Bragg"
+		},
+		"count" : 2
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 4,
+			"user" : "greggerm"
+		},
+		"count" : 833
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 2,
+			"user" : "ZeLonewolf"
 		},
 		"count" : 1
 	},
 	{
 		"_id" : {
+			"year" : 2009,
+			"month" : 8,
+			"user" : "42429"
+		},
+		"count" : 35
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 6,
+			"user" : "NE2"
+		},
+		"count" : 9
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 11,
+			"user" : "woodpeck_fixbot"
+		},
+		"count" : 45253
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 5,
+			"user" : "jerryam"
+		},
+		"count" : 940
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 10,
+			"user" : "42429"
+		},
+		"count" : 1322
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 9,
+			"user" : "azsr"
+		},
+		"count" : 3055
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 1,
+			"user" : "ZeLonewolf"
+		},
+		"count" : 1020
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 3,
+			"user" : "Roman Guy"
+		},
+		"count" : 8692
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 5,
+			"user" : "OceanVortex"
+		},
+		"count" : 5571
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 11,
+			"user" : "maxerickson"
+		},
+		"count" : 560
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 8,
+			"user" : "TIGERcnl"
+		},
+		"count" : 3069
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 6,
+			"user" : "Di Splainame"
+		},
+		"count" : 126
+	},
+	{
+		"_id" : {
 			"year" : 2017,
 			"month" : 5,
-			"user" : "wambag"
+			"user" : "Outlier73"
 		},
-		"count" : 1
+		"count" : 109
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 5,
+			"user" : "Di Splainame"
+		},
+		"count" : 173
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 11,
+			"user" : "Di Splainame"
+		},
+		"count" : 247
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 9,
+			"user" : "JasonWoof"
+		},
+		"count" : 2
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 7,
+			"user" : "maxerickson"
+		},
+		"count" : 10
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 11,
+			"user" : "Roman Guy"
+		},
+		"count" : 137
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 3,
+			"user" : "Zirnch"
+		},
+		"count" : 1437
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 3,
+			"user" : "Zirnch"
+		},
+		"count" : 16001
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 1,
+			"user" : "Di Splainame"
+		},
+		"count" : 530
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 8,
+			"user" : "Outlier73"
+		},
+		"count" : 2
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 3,
+			"user" : "greggerm"
+		},
+		"count" : 930
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 7,
+			"user" : "NE2"
+		},
+		"count" : 33
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 11,
+			"user" : "maxerickson"
+		},
+		"count" : 43
+	},
+	{
+		"_id" : {
+			"year" : 2007,
+			"month" : 10,
+			"user" : "KindredCoda"
+		},
+		"count" : 3
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 9,
+			"user" : "NE2"
+		},
+		"count" : 753
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 12,
+			"user" : "greggerm"
+		},
+		"count" : 75136
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 2,
+			"user" : "greggerm"
+		},
+		"count" : 963
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 2,
+			"user" : "Zirnch"
+		},
+		"count" : 223
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 1,
+			"user" : "Outlier73"
+		},
+		"count" : 462
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 2,
+			"user" : "greggerm"
+		},
+		"count" : 440
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 5,
+			"user" : "greggerm"
+		},
+		"count" : 795
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 9,
+			"user" : "greggerm"
+		},
+		"count" : 2154
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 6,
+			"user" : "Alan Bragg"
+		},
+		"count" : 2750
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 12,
+			"user" : "Di Splainame"
+		},
+		"count" : 397
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 9,
+			"user" : "greggerm"
+		},
+		"count" : 3133
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 12,
+			"user" : "Leo22"
+		},
+		"count" : 622
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 12,
+			"user" : "NE2"
+		},
+		"count" : 492
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 5,
+			"user" : "greggerm"
+		},
+		"count" : 255
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 7,
+			"user" : "azsr"
+		},
+		"count" : 3288
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 1,
+			"user" : "greggerm"
+		},
+		"count" : 61
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 12,
+			"user" : "Leo22"
+		},
+		"count" : 223
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 8,
+			"user" : "azsr"
+		},
+		"count" : 3302
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 3,
+			"user" : "Zirnch"
+		},
+		"count" : 206
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 3,
+			"user" : "greggerm"
+		},
+		"count" : 176
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 4,
+			"user" : "Alex KG Ellis"
+		},
+		"count" : 7120
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 5,
+			"user" : "greggerm"
+		},
+		"count" : 228
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 4,
+			"user" : "greggerm"
+		},
+		"count" : 482
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 2,
+			"user" : "Leo22"
+		},
+		"count" : 27
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 9,
+			"user" : "woodpeck_fixbot"
+		},
+		"count" : 58833
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 2,
+			"user" : "Di Splainame"
+		},
+		"count" : 391
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 11,
+			"user" : "maxerickson"
+		},
+		"count" : 15
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 11,
+			"user" : "ZeLonewolf"
+		},
+		"count" : 369
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 10,
+			"user" : "greggerm"
+		},
+		"count" : 544
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 10,
+			"user" : "Zirnch"
+		},
+		"count" : 2519
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 10,
+			"user" : "jerryam"
+		},
+		"count" : 17
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 5,
+			"user" : "Werewombat"
+		},
+		"count" : 1209
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 5,
+			"user" : "tebiggs"
+		},
+		"count" : 1179
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 2,
+			"user" : "Roman Guy"
+		},
+		"count" : 1325
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 12,
+			"user" : "greggerm"
+		},
+		"count" : 1120
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 1,
+			"user" : "John Wrenn"
+		},
+		"count" : 1438
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 3,
+			"user" : "Alex KG Ellis"
+		},
+		"count" : 622
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 8,
+			"user" : "NE2"
+		},
+		"count" : 5
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 9,
+			"user" : "jerryam"
+		},
+		"count" : 10
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 6,
+			"user" : "Leo22"
+		},
+		"count" : 103
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 11,
+			"user" : "greggerm"
+		},
+		"count" : 369
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 11,
+			"user" : "Zirnch"
+		},
+		"count" : 525
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 11,
+			"user" : "swimdb"
+		},
+		"count" : 1012
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 8,
+			"user" : "John Wrenn"
+		},
+		"count" : 49
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 11,
+			"user" : "greggerm"
+		},
+		"count" : 1512
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 10,
+			"user" : "NE2"
+		},
+		"count" : 552
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 11,
+			"user" : "OceanVortex"
+		},
+		"count" : 77
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 3,
+			"user" : "greggerm"
+		},
+		"count" : 3132
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 5,
+			"user" : "OMMB"
+		},
+		"count" : 47
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 5,
+			"user" : "greggerm"
+		},
+		"count" : 4042
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 5,
+			"user" : "Zirnch"
+		},
+		"count" : 981
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 6,
+			"user" : "greggerm"
+		},
+		"count" : 609
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 11,
+			"user" : "Outlier73"
+		},
+		"count" : 593
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 10,
+			"user" : "Outlier73"
+		},
+		"count" : 80
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 1,
+			"user" : "42429"
+		},
+		"count" : 889
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 2,
+			"user" : "Outlier73"
+		},
+		"count" : 155
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 7,
+			"user" : "JasonWoof"
+		},
+		"count" : 1215
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 11,
+			"user" : "KindredCoda"
+		},
+		"count" : 153
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 9,
+			"user" : "JasonWoof"
+		},
+		"count" : 138
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 7,
+			"user" : "greggerm"
+		},
+		"count" : 2
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 3,
+			"user" : "maxerickson"
+		},
+		"count" : 31
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 7,
+			"user" : "John Wrenn"
+		},
+		"count" : 12
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 10,
+			"user" : "woodpeck_fixbot"
+		},
+		"count" : 193
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 10,
+			"user" : "Alan Bragg"
+		},
+		"count" : 599
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 12,
+			"user" : "Roman Guy"
+		},
+		"count" : 315
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 7,
+			"user" : "Zirnch"
+		},
+		"count" : 36
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 7,
+			"user" : "greggerm"
+		},
+		"count" : 4487
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 2,
+			"user" : "ZeLonewolf"
+		},
+		"count" : 259
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 7,
+			"user" : "EmilyPPP"
+		},
+		"count" : 2705
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 12,
+			"user" : "miluethi"
+		},
+		"count" : 4637
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 1,
+			"user" : "NE2"
+		},
+		"count" : 992
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 6,
+			"user" : "KindredCoda"
+		},
+		"count" : 6
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 6,
+			"user" : "KindredCoda"
+		},
+		"count" : 625
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 1,
+			"user" : "Durango"
+		},
+		"count" : 806
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 6,
+			"user" : "42429"
+		},
+		"count" : 27
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 5,
+			"user" : "maxerickson"
+		},
+		"count" : 32
+	},
+	{
+		"_id" : {
+			"year" : 2008,
+			"month" : 4,
+			"user" : "crschmidt"
+		},
+		"count" : 36
+	},
+	{
+		"_id" : {
+			"year" : 2009,
+			"month" : 1,
+			"user" : "crschmidt"
+		},
+		"count" : 4306
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 12,
+			"user" : "bot-mode"
+		},
+		"count" : 411
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 4,
+			"user" : "jerryam"
+		},
+		"count" : 94
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 8,
+			"user" : "NE2"
+		},
+		"count" : 615
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 8,
+			"user" : "EmilyPPP"
+		},
+		"count" : 1998
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 2,
+			"user" : "OMMB"
+		},
+		"count" : 362
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 7,
+			"user" : "NE2"
+		},
+		"count" : 133
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 9,
+			"user" : "OMMB"
+		},
+		"count" : 100
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 1,
+			"user" : "42429"
+		},
+		"count" : 50
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 2,
+			"user" : "Zirnch"
+		},
+		"count" : 1288
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 6,
+			"user" : "greggerm"
+		},
+		"count" : 129
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 1,
+			"user" : "maxerickson"
+		},
+		"count" : 11
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 3,
+			"user" : "OMMB"
+		},
+		"count" : 24
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 10,
+			"user" : "maxerickson"
+		},
+		"count" : 2550
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 4,
+			"user" : "ZeLonewolf"
+		},
+		"count" : 95
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 11,
+			"user" : "NE2"
+		},
+		"count" : 125
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 8,
+			"user" : "greggerm"
+		},
+		"count" : 1479
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 8,
+			"user" : "ZeLonewolf"
+		},
+		"count" : 23
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 11,
+			"user" : "42429"
+		},
+		"count" : 23
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 4,
+			"user" : "greggerm"
+		},
+		"count" : 1808
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 7,
+			"user" : "greggerm"
+		},
+		"count" : 1095
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 4,
+			"user" : "Zirnch"
+		},
+		"count" : 3254
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 11,
+			"user" : "morganwahl"
+		},
+		"count" : 3850
+	},
+	{
+		"_id" : {
+			"year" : 2015,
+			"month" : 12,
+			"user" : "42429"
+		},
+		"count" : 56
+	},
+	{
+		"_id" : {
+			"year" : 2010,
+			"month" : 10,
+			"user" : "42429"
+		},
+		"count" : 60
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 6,
+			"user" : "John Wrenn"
+		},
+		"count" : 7760
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 5,
+			"user" : "Zirnch"
+		},
+		"count" : 2185
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 1,
+			"user" : "greggerm"
+		},
+		"count" : 194
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 6,
+			"user" : "jerryam"
+		},
+		"count" : 65
+	},
+	{
+		"_id" : {
+			"year" : 2017,
+			"month" : 10,
+			"user" : "jerryam"
+		},
+		"count" : 144
+	},
+	{
+		"_id" : {
+			"year" : 2016,
+			"month" : 8,
+			"user" : "JasonWoof"
+		},
+		"count" : 93
+	},
+	{
+		"_id" : {
+			"year" : 2011,
+			"month" : 7,
+			"user" : "ZeLonewolf"
+		},
+		"count" : 68
+	},
+	{
+		"_id" : {
+			"year" : 2014,
+			"month" : 8,
+			"user" : "Di Splainame"
+		},
+		"count" : 119
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 11,
+			"user" : "42429"
+		},
+		"count" : 321
+	},
+	{
+		"_id" : {
+			"year" : 2012,
+			"month" : 12,
+			"user" : "greggerm"
+		},
+		"count" : 160
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 10,
+			"user" : "maxerickson"
+		},
+		"count" : 58
+	},
+	{
+		"_id" : {
+			"year" : 2013,
+			"month" : 4,
+			"user" : "jremillard-massgis"
+		},
+		"count" : 260098
 	}
 ]
