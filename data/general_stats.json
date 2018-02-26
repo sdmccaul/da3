@@ -6,11 +6,11 @@
 		"objects" : 821910,
 		"avgObjSize" : 260.47202856760475,
 		"dataSize" : 214084565,
-		"storageSize" : 61374464,
+		"storageSize" : 61468672,
 		"numExtents" : 0,
 		"indexes" : 1,
 		"indexSize" : 8048640,
-		"fsUsedSize" : 32177147904,
+		"fsUsedSize" : 32148647936,
 		"fsTotalSize" : 51471126528,
 		"ok" : 1
 	},
@@ -32,11 +32,27 @@
 			"count" : 118087
 		}
 	],
-	"users_with_1_data" : 112,
-	"average_user" : [
+	"users_with_1_doc" : 112,
+	"average_user_docs" : [
 		{
 			"_id" : 1,
 			"avg_docs" : 1358.5289256198348
+		}
+	],
+	"user_doc_std" : [
+		{
+			"_id" : 1,
+			"stdDev" : 14177.302264024958
+		}
+	],
+	"earliest_timestamp" : [
+		{
+			"_id" : "2007-09-02T03:44:01Z"
+		}
+	],
+	"latest_timestamp" : [
+		{
+			"_id" : "2017-11-28T20:42:56Z"
 		}
 	]
 }
