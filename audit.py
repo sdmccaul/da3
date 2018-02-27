@@ -8,7 +8,6 @@ import json
 
 def model_zones(mongo_obj, k, v):
     mapped_zones = {
-    #From 'buildings' field
         'building' : {
             "college" : "civic",
             "public" : "civic",
@@ -144,7 +143,7 @@ def validate_lat_lon(lat, lon):
     if ( minlat <= flat <= maxlat ) and ( minlon <= flon <= maxlon ):
         return [ flat, flon ]
     else:
-        return None
+        return { 'bad_pos' : True, 'pos_val': [ flat, flon ] }
 
 def validate_street(raw):
     if ',' in raw:
