@@ -784,3 +784,129 @@ db.pvd.find({ "nd" : {$size : 987 } })
 db.pvd.distinct("addr.postalcode")
 db.pvd.distinct("addr.postcode")
 db.pvd.distinct("addr.district")
+show dbs
+use rabviz
+show stats
+show stats()
+db.forceEdge.stats()
+db.forceEdge.findOne()
+db.forceEdge.drop()
+use rabviz
+db.forceEdge.stats()
+use rabviz
+db.forceEdge.drop()
+show collections
+db.stats()
+use rabviz
+show collections
+db.etl.transform.forceEdgeGraph.drop()
+show collections
+use rabviz
+show collections
+db.forceEdgeGraph.drop()
+use rabviz
+show collections
+db.forceEdgeGraph.stats()
+use rabviz
+db.forceEdgeGraph.drop()
+use rabviz
+db.forceEdgeGraph.stats()
+db.forceEdgeGraph.findOne()
+use rabviz
+db.forceEdgeGraph.findOne()
+db.forceEdgeGraph.drop()
+use rabviz
+show collections
+db.forceEdgeGraph.findOne()
+db.chordDiagram.findOne()
+db.chordDiagram.find({'rabid': 'http://vivo.brown.edu/individual/bychoi'})
+db.chordDiagram.stats()
+db.chordDiagram.find({'rabid': 'http://vivo.brown.edu/individual/bychoi'})
+db.forceEdgeGraph.find({'rabid': 'http://vivo.brown.edu/individual/bychoi'})
+use osm
+db.stats()
+db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, { $match : { "count" : { $gte : 1000 } } } ]).map( function(obj) { return obj._id });
+var filter_limit = 1000;
+var users = db.pvd.aggregate([ {$group : { _id : "$created.user", count: {$sum :1 } } }, { $match : { "count" : { $gte : filter_limit } } } ]).map( function(obj) { return obj._id });
+users
+db.pvd.aggregate( [ {$match : { "created.user" : { $in: users } } }, {$group : { _id : {"year": "$created.year", "month": "$created.month", "user":"$created.user" }, count: {$sum :1 } } } ]);
+it
+var res = db.pvd.aggregate( [ {$match : { "created.user" : { $in: users } } }, {$group : { _id : {"year": "$created.year", "month": "$created.month", "user":"$created.user" }, count: {$sum :1 } } } ]);
+res
+res._batch
+res.toArray()
+res.toArray().length
+res._batch.length
+res._batch
+res
+var res = db.pvd.aggregate( [ {$match : { "created.user" : { $in: users } } }, {$group : { _id : {"year": "$created.year", "month": "$created.month", "user":"$created.user" }, count: {$sum :1 } } } ]);
+res.length
+res._batch.length
+var d = db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {$sort : {count : -1 } } ]);
+d._batch.length
+d.toArray().length
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {$max : '$count' } } ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { $max : '$count' } ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {$project : { 'max' : { $max : '$count' } } } ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {$group : { '_id': '$_id', 'max' : { $max : '$count' } } } ])
+var d = db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {$sort : {count : -1 } },{$limit: 1} ]);
+d
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {$sort : {count : -1 } },{$limit: 3} ]);
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {$sort : {count : -1 } }, {$match: { 'count': 1} } ]);
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {$sort : {count : -1 } }, {$match: { 'count': 1} } ]).toArray().length;
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {$project : { $avg: '$count' } } ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$project': { '$avg': '$count' } } ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$project': { '$avg': 'count' } } ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$project': { $avg: 'count' } } ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$project': { 'average' : {$avg: 'count' } } } ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$project': 'count' }   ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$project': { 'count' : '$count' } }   ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : { $avg : '$count' } } }   ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }   ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'average' : { $avg : '$count' } } }   ])
+use osm
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'average' : { $avg : '$count' } } }   ]).average
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'average' : { $avg : '$count' } } }   ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'average' : { $avg : '$count' } } }   ])['average']
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'average' : { $avg : '$count' } } }   ]).toArray()
+var o =db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'average' : { $avg : '$count' } } }   ]);
+o.valueOf('average')
+o.valueOf()
+o
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'average' : { $avg : '$count' } } }   ]).valueOf().average;
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'average' : { $avg : '$count' } } }   ]).valueOf();
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'average' : { $avg : '$count' } } }   ]).valueOf()['average'];
+var o = db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'average' : { $avg : '$count' } } }   ]).valueOf();
+o
+o['average']
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'avg_docs' : { $avg : '$count' } } }   ]).avg_docs;
+var o = db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'avg_docs' : { $avg : '$count' } } }   ]).valueOf();
+o
+var o = db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'avg_docs' : { $avg : '$count' } } }   ]).tojson();
+var o = db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'avg_docs' : { $avg : '$count' } } }   ]).valueOf().tojson();
+use osm
+db.pvd.drop()
+use osm
+stats()
+osm.pvd.stats()
+db.pvd.stats()
+show collections
+show dbs
+db.stats()
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {'group' : {'_id' : {$stdDevPop: '$count' } } }])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {'$group' : {'_id' : {$stdDevPop: '$count' } } }])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {'$project' : {'stdDev' : {$stdDevPop: '$count' } } }])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {'$group' : {'_id' : true, 'stdDev' : {$stdDevPop: '$count' } } }])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, { '$group': { '_id' : 1, 'avg_docs' : { $avg : '$count' } } }   ]);
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {'$group' : {'_id' : 1, 'stdDev' : {$stdDevPop: '$count' } } }])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } },{$match : { 'count' : {$lt : 100000} } }, {'$group' : {'_id' : 1, 'stdDev' : {$stdDevPop: '$count' } } }])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.user', 'count' : { '$sum' : 1} } }, {'$group' : {'_id' : 1, 'stdDev' : {$stdDevPop: '$count' } } }])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.timestamp'} }, { '$sort' : { '_id' : -1 } }, {$limit : 1} ])
+db.pvd.aggregate([ {'$group' : { '_id': '$created.timestamp'} }, { '$sort' : { '_id' : 1 } }, {$limit : 1} ])
+db.pvd.findOne({ "member" : {$size : 7590 } })
+db.pvd.findOne({ "nd" : {$size : 987 } })
+db.pvd.findOne({ "nd" : {$size : 987 } })['name' ]
+var obj = db.pvd.findOne({ "nd" : {$size : 987 } });
+obj.keys()
+Object.keys(obj)
