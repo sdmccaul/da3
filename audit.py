@@ -4,6 +4,7 @@ import re
 import datetime
 import pprint
 import json
+import sys
 
 
 def model_zones(mongo_obj, k, v):
@@ -271,6 +272,7 @@ def model_elem(elem, childRef=None):
     return mongo_obj
 
 def get_element(osm_file, skip=('osm')):
+    # Borrowed from course materials
     """Yield element if it is the right type of tag
 
     Reference:
@@ -283,7 +285,7 @@ def get_element(osm_file, skip=('osm')):
             yield elem
             root.clear()
 
-def parse_osm_xml(osmFile):
+def parse_osm_xml(osmFile, destination):
 
     # A set of counters for data auditing and cross-validation
     ## Counts number of elements (tags)
@@ -305,7 +307,7 @@ def parse_osm_xml(osmFile):
     data_obj_count = defaultdict(Counter)
 
     # The main process
-    with open('data/providence_et_al.json','w') as f:
+    with open(destination,'w') as f:
         # Write some helper text to ensure the output
         # file is valid JSON
         f.write('[\n')
@@ -385,4 +387,6 @@ def parse_osm_xml(osmFile):
         json.dump(data_key, f, sort_keys=True, indent=4)
 
 if __name__ == "__main__":
-    parse_osm_xml('data/providence_et_al.xml')
+    xml_in = sys.argv[1]
+    json_out = sys.argv[2]
+    parse_osm_xml(xml_in, json_out)
