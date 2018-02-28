@@ -1,0 +1,4 @@
+Link to map:
+https://www.openstreetmap.org/export#map=11/41.7990/-71.3782
+
+This map covers Providence, RI, and the surrounding area. I chose it because 1) I live here and 2) I thought it would make for an interesting subject. Providence is both the state capital and the largest city in the state. Being an older industrial city, its urban area includes a number of neighboring, smaller cities; the borders between which are blurry. In fact, the Providence urban area spreads into Massachusetts, which I though would add complexity. Outside the urban area, Rhode Island quickly becomes rural, turning into farmland and waterfront. Again, I thought this would add interest to the dataset.
